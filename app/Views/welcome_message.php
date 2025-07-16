@@ -148,7 +148,7 @@
     <!-- HERO -->
     <div class="hero flex justify-center items-center h-screen flex-col">
         <img src="https://ppkdju.com/static/img/hero.jpg" alt="Hero Image" id="images" class="h-100">
-        <h1 class="mt-20 text-4xl font-light">Selamat datang <span class="text-c    yan-300 font-light">Jaknaker</span></h1>
+        <h1 class="mt-20 text-4xl font-light">Selamat datang <span class="text-cyan-300 font-light">Jaknaker</span></h1>
         <h1 class="mt-5 text-xl font-light">Tingkatkan kompetensi mu untuk raih karir yang kamu inginkan, <strong>GRATIS!</strong></h1>
         <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition mt-5" href="/#services">Yuk Mulai</a>
     </div>
@@ -173,8 +173,6 @@
             dan sikap sesuai standar yang ditetapkan di tempat kerja.</p>
     </div>
 </div>
-
-    
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script>

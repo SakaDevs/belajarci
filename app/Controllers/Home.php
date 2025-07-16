@@ -47,7 +47,7 @@ class Home extends BaseController
         return view('contact', $data);
     }
     public function about(): string
-    {
+    {   
         return view('about');
     }
     public function profile(): string
