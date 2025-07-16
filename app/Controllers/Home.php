@@ -30,7 +30,7 @@ class Home extends BaseController
                 [
                     'Nama'  => 'IingLaravel',
                     'Email' => 'Iing@gmail.com',
-                    'Umur'  => '520',
+                    'Umur'  => '5`20',
                 ],
                 [
                     'Nama'  => 'Engkong',
