@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\LowonganModel;
 class Home extends BaseController
 {
     public function index(): string
@@ -50,8 +50,13 @@ class Home extends BaseController
     {   
         return view('about');
     }
-    public function profile(): string
+    public function layanan(): string
     {
         return view('company_profile');
+    }
+    public function lowongan(): string{
+        $lowongan = (new LowonganModel())->findAll();
+  
+        return view('lowongan', compact('lowongan'));
     }
 }
