@@ -3,31 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lowongan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .job-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+        }
+        
+        .company-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        
+        .salary-badge {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        
+        .card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-body {
+            flex-grow: 1;
+        }
+        
 
+    </style>
 </head>
-<body>
-    
-</div>
-<?= $this->include('layout/navbar') ?>
-     <?php foreach($lowongan as $k => $v): ?>
-       <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mt-50">
-            <a href="#">
-                <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" /></a>
-            <div class="p-5">
-                <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?=$v['judul_lowongan'] ?></h5></a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><?=$v['detail_lengkap'] ?></p>
-                <a href="/lowongan-detail/<?=$v['id']?>" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Detail
-                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navbar include would go here -->
+    <?= $this->include('layout/navbar') ?>   
+
+    <!-- Jobs Container -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-9xl mx-auto">
+            <!-- Page Title -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Available Jobs</h1>
             </div>
+            
+            <!-- Jobs Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <?php foreach($lowongan as $k => $v): ?>
+                <div class="job-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:border-indigo-200">
+                    <!-- Card Image -->
+                    <div class="relative">
+                        <img class="w-full h-48 object-cover" 
+                             src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="<?= htmlspecialchars($v['judul_lowongan']) ?>" />
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <div class="card-content p-6">
+                        <div class="card-body">
+                            <!-- Job Status -->
+                            <div class="flex items-center mb-3">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                <span class="text-sm text-green-600 font-medium">Available</span>
+                            </div>
+                            
+                            <!-- Job Title -->
+                            <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2 min-h-[3.5rem]">
+                                <?= htmlspecialchars($v['judul_lowongan']) ?>
+                            </h3>
+                            
+                            <!-- Job Description -->
+                            <p class="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed min-h-[4.5rem]">
+                                <?= htmlspecialchars($v['detail_lengkap']) ?>
+                            </p>
+                            
+                            <!-- Company Info -->
+                            <div class="flex items-center mb-6">
+                                <div class="flex items-center text-gray-500">
+                                    <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                    <span class="text-sm truncate"><?= htmlspecialchars($v['nama_perusahaan']) ?></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Detail Button -->
+                        <div class="mt-auto">
+                            <a href="/lowongan/detail/<?= $v['id'] ?>" 
+                               class="btn-primary w-full text-white font-medium py-3 rounded-2xl text-center">
+                                <span class="flex items-center justify-center">
+                                    View Details
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            
+            <!-- Empty State (if no jobs) -->
+            <?php if(empty($lowongan)): ?>
+            <div class="text-center py-16">
+                <svg class="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2"/>
+                </svg>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">No jobs available</h3>
+                <p class="text-gray-600">Check back later for new opportunities</p>
+            </div>
+            <?php endif; ?>
         </div>
-     <?php endforeach; ?>
-
-
+    </div>
 </body>
 </html>

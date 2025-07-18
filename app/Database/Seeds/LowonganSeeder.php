@@ -8,7 +8,7 @@ class LowonganSeeder extends Seeder
 {
     private const ROWS = [ 
         [
-            'judul_lowongan' => 'asfgafdgasdfgsdfgsdfg',
+            'judul_lowongan' => 'Chief Engineering',
             'nama_perusahaan' => 'Hariston Hotel & Suites',
             'gambar_poster' => 'https://ppkdju.com/media/jobs/WhatsApp_Image_2025-06-30_at_09.24.04.jpeg',
             'deskripsi_singkat' => 'Requirements : 1. Minimum 2 (two) years experience in the same position within hospitality industry 2. Team player with outstanding attitude and good appearance 3. Attractive development opportunities are offered',
