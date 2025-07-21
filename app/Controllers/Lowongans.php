@@ -2,15 +2,18 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use App\Models\LowonganModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Lowongans extends BaseController
 {
-    public function findbyid($id)
+    protected $lowonganModel;
+    public function findbyid($id): string
     {
-        $detail = (new LowonganModel())->where("id", $id)->first();
+        $detail = $this->lowonganModel->where('id', $id)->first();
         return view('detail', compact('detail'));
+    }
+
+    public function __construct(){
     }
 }

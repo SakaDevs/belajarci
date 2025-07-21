@@ -15,4 +15,5 @@ $routes->get('jadwal', 'Home::jadwal');
 $routes->get('register', 'Home::register');
 $routes->get('auth/login', 'Home::login');
 $routes->get('lowongan/detail/(:num)', 'lowongans::findbyid/$1');
+$routes->get('lowongan', 'lowongans::search');
 

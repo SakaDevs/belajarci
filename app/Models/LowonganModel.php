@@ -43,4 +43,16 @@ class LowonganModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+public function search($keyword)
+{
+    return $this->builder()
+        ->groupStart()
+            ->like('judul_lowongan', $keyword)
+            ->orLike('detail_lengkap', $keyword)
+            ->orLike('nama_perusahaan', $keyword)
+        ->groupEnd()
+        ->get()
+        ->getResultArray(); // penting!
+}
+
 }
