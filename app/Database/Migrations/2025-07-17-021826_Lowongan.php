@@ -54,6 +54,6 @@ class Lowongan extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('lowongans'); // Menambahkan dropTable di down() untuk rollback
+        $this->forge->dropTable('lowongans'); 
     }
 }

@@ -1,5 +1,5 @@
 /* Your existing list item hover effect */
-li {
+.navbarid {
   --b: 0.1em;
   --c: #81beffff;
   color: #0000;
@@ -14,7 +14,7 @@ li {
     background-size 0.3s calc(0.3s - var(--_s, 0s));
 }
 
-li:hover {
+.navbarid:hover {
   --_p: 100%;
   --_s: 0.3s;
 }

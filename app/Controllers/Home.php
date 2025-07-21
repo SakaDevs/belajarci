@@ -20,13 +20,6 @@ class Home extends BaseController
     {
         return view('jadwal');
     }
-    public function register(): string
-    {
-        return view('register');
-    }
-    public function login(): string {
-        return view('auth/login');
-    }
     public function lowongan(): string{
         $lowongan = (new LowonganModel())->findAll();
   

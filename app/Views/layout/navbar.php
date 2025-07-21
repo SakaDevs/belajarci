@@ -16,25 +16,6 @@
             box-sizing: border-box;
         }
 
-        /* Your existing list item hover effect */
-        li {
-            --b: 0.1em;
-            --c: #81beffff;
-            color: #0000;
-            padding-block: var(--b);
-            background:
-            linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
-            linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
-            -webkit-background-clip: text,padding-box;
-            background-clip: text,padding-box;
-            transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-        }
-
-        li:hover {
-            --_p: 100%;
-            --_s: .3s;
-        }
-
         /* Basic styling for the dropdown menu */
         .dropdown-menu {
             display: none;
@@ -276,11 +257,11 @@
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul class="flex gap-8 font-light">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#about">Tentang</a></li>
-                    <li><a href="/#services">Layanan</a></li>
-                    <li><a href="/lowongan/">Lowongan</a></li>
-                    <li><a href="/jadwal/">Jadwal</a></li>
+                    <li class="navbarid"><a href="/">Home</a></li>
+                    <li class="navbarid"><a href="#about">Tentang</a></li>
+                    <li class="navbarid"><a href="#layanan">Layanan</a></li>
+                    <li class="navbarid"><a href="/lowongan/">Lowongan</a></li>
+                    <li class="navbarid"><a href="/jadwal/">Jadwal</a></li>
                     
                     <li class="relative">
                         <a href="#" class="dropdown-toggle" id="pelatihanDropdownToggle">
