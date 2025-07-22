@@ -70,7 +70,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class= min-h-screen">
     <!-- Navbar include -->
     <?= $this->include('layout/navbar') ?>
 

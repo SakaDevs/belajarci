@@ -79,41 +79,45 @@
 <body class="bg-gray-50 min-h-screen">
     <!-- Navbar include would go here -->
     <?= $this->include('layout/navbar') ?>   
-    
     <!-- Jobs Container -->
-    <div class="container mx-auto px-4 py-8">
-        <div class="max-w-9xl mx-auto">
-            <!-- Page Title -->
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">Available Jobs</h1>
-            </div>
-            
-            
-    <!-- Search Bar -->
-    <form class="max-w-md mx-auto mb-10" action="<?= base_url('search')?>" method="get">   
-        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-            </div>
-            <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-            <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-9xl mx-auto">
+        <!-- Page Title -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Available Jobs</h1>
         </div>
-    </form>
 
+        <!-- Search Bar -->
+        <form class="max-w-md mx-auto mb-10" method="get" action="<?= base_url('lowongan/search') ?>">
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500" aria-hidden="true" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                </div>
+                <input type="search" id="default-search" name="keyword"
+                       class="block w-full p-4 ps-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                       placeholder="Search..." required/>
+                <button type="submit"
+                        class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
+                    Search
+                </button>
+            </div>
+        </form>
 
-            <!-- Jobs Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Jobs Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <?php foreach ($lowongan as $data): ?>
                 <div class="job-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:border-indigo-200">
                     <!-- Card Image -->
                     <div class="relative">
-                        <img class="w-full h-48 object-cover" 
-                             src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                             alt="<?= htmlspecialchars($data['judul_lowongan']) ?>" />
+                        <img class="w-full h-48 object-cover"
+                             src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                             alt="<?= htmlspecialchars($data['judul_lowongan']) ?>"/>
                     </div>
-                    
+
                     <!-- Card Content -->
                     <div class="card-content p-6">
                         <div class="card-body">
@@ -122,55 +126,59 @@
                                 <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                                 <span class="text-sm text-green-600 font-medium">Available</span>
                             </div>
-                            
+
                             <!-- Job Title -->
                             <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2 min-h-[3.5rem]">
                                 <?= htmlspecialchars($data['judul_lowongan']) ?>
                             </h3>
-                            
+
                             <!-- Job Description -->
                             <p class="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed min-h-[4.5rem]">
                                 <?= htmlspecialchars($data['detail_lengkap']) ?>
                             </p>
-                            
+
                             <!-- Company Info -->
                             <div class="flex items-center mb-6">
                                 <div class="flex items-center text-gray-500">
                                     <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                                     </svg>
                                     <span class="text-sm truncate"><?= htmlspecialchars($data['nama_perusahaan']) ?></span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Detail Button -->
                         <div class="mt-auto">
-                            <a href="/lowongan/detail/<?= $data['id'] ?>" 
+                            <a href="/lowongan/detail/<?= $data['id'] ?>"
                                class="btn-primary w-full text-white font-medium py-3 rounded-2xl text-center">
                                 <span class="flex items-center justify-center">
                                     View Details
                                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                                     </svg>
                                 </span>
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Empty State (if no jobs) -->
-            <?php if(empty($data)): ?>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Empty State -->
+        <?php if (empty($lowongan)): ?>
             <div class="text-center py-16">
                 <svg class="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2"/>
                 </svg>
                 <h3 class="text-lg font-medium text-gray-900 mb-2">No jobs available</h3>
                 <p class="text-gray-600">Check back later for new opportunities</p>
             </div>
-            <?php endif; ?>
-        </div>
+        <?php endif; ?>
     </div>
+</div>
 </body>
 </html>

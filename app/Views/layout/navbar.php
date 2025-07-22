@@ -256,7 +256,7 @@
 
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
-                <ul class="flex gap-8 font-light">
+                <ul class="flex gap-8 font-light text-center">
                     <li class="navbarid"><a href="/">Home</a></li>
                     <li class="navbarid"><a href="#about">Tentang</a></li>
                     <li class="navbarid"><a href="#layanan">Layanan</a></li>
@@ -289,7 +289,7 @@
             </nav>
 
             <!-- Desktop Start Button -->
-            <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition desktop-start-btn" href="auth/login">Login</a>
+            <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition desktop-start-btn" href="\App\Views\Auth\login">Login</a>
 
             <!-- Hamburger Menu -->
             <div class="hamburger" id="hamburger">

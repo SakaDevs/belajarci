@@ -4,14 +4,14 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class LowonganModel extends Model
+class JadwalModel extends Model
 {
-    protected $table            = 'lowongans';
+    protected $table            = 'jadwal';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $protectFields    = false;
+    protected $protectFields    = true;
     protected $allowedFields    = [];
 
     protected bool $allowEmptyInserts = false;
@@ -43,5 +43,4 @@ class LowonganModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
 }

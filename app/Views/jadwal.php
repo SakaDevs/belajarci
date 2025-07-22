@@ -20,177 +20,36 @@
             <h2 class="text-3xl font-light text-center text-gray-800 mb-8">Daftar Jadwal Pelatihan PPKD Jakut</h2>
             
             <div class="overflow-x-auto shadow-lg rounded-lg"> 
-                <table class="min-w-full divide-y divide-gray-200" id="jadwal-table">
-                    <thead class="bg-blue-400 text-white">
-                        <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tl-lg">Program Pelatihan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Angkatan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Tutup Pendaftaran</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Seleksi</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Seleksi</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Pelatihan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Pelatihan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Awal Uji Kompetensi</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tr-lg">Akhir Uji Kompetensi</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">CYBER SECURITY</td>
-                            <td class="px-6 py-4 whitespace-nowrap">II</td>
-                            <td class="px-6 py-4 whitespace-nowrap">12 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">16 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">17 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">30 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">08 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">11 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">12 Aug 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">TIK - JUNIOR WEB DEVELOPER</td>
-                            <td class="px-6 py-4 whitespace-nowrap">I</td>
-                            <td class="px-6 py-4 whitespace-nowrap">23 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">03 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">04 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">30 Jun 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">08 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">11 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">12 Aug 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">OPERATOR FORKLIFT</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">02 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">03 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">04 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">10 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">30 Jul 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">OPERATOR EXCAVATOR</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">02 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">07 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">08 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">10 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">30 Jul 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">OPERATOR FORKLIFT</td>
-                            <td class="px-6 py-4 whitespace-nowrap">IV</td>
-                            <td class="px-6 py-4 whitespace-nowrap">30 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">31 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">01 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">07 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">26 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Aug 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">OPERATOR EXCAVATOR</td>
-                            <td class="px-6 py-4 whitespace-nowrap">IV</td>
-                            <td class="px-6 py-4 whitespace-nowrap">30 Jul 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">04 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">05 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">07 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">26 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Aug 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">TIK - JUNIOR ANDROID DEVELOPER</td>
-                            <td class="px-6 py-4 whitespace-nowrap">I</td>
-                            <td class="px-6 py-4 whitespace-nowrap">12 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">13 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">14 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Sep 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">30 Sep 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">01 Oct 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">SERVICE SEPEDA MOTOR INJEKSI / TEKNIK SEPEDA MOTOR</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">15 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">21 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Oct 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">TEKNISI KOMPUTER DAN JARINGAN</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">15 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">21 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Oct 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">DESAINER GRAFIS MADYA</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">15 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">21 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Oct 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">PEMASANGAN INSTALASI OTOMASI LISTRIK INDUSTRI / TEKNIK LISTRIK</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">15 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">21 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Oct 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">BAHASA INGGRIS UNTUK TENAGA ADMINISTRASI PROFESIONAL</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">15 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">21 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Oct 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">DATA MANAGEMENT STAFF / OPERATOR KOMPUTER</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">15 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">21 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Oct 2025</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">PERAWATAN KECANTIKAN / TATA RIAS</td>
-                            <td class="px-6 py-4 whitespace-nowrap">III</td>
-                            <td class="px-6 py-4 whitespace-nowrap">15 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">18 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">21 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">25 Aug 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">27 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">28 Oct 2025</td>
-                            <td class="px-6 py-4 whitespace-nowrap">29 Oct 2025</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <?php foreach($model as $jadwal): ?>
+                    <table class="min-w-full divide-y divide-gray-200" id="jadwal-table">
+                        <thead class="bg-blue-400 text-white">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tl-lg">Program Pelatihan</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Angkatan</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Tutup Pendaftaran</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Seleksi</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Seleksi</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Pelatihan</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Pelatihan</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Awal Uji Kompetensi</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tr-lg">Akhir Uji Kompetensi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['nama_program'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['angkatan'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['tutup_pendaftaran'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['mulai_seleksi'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['akhir_seleksi'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['mulai_pelatihan'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['akhir_pelatihan'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['awal_kompetensi'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['akhir_kompetensi'] ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <?php endforeach; ?>
             </div>
         </div>
     </section>

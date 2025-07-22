@@ -28,9 +28,11 @@
             border-color: #60a5fa; /* blue-400 */
             outline: 0;
             box-shadow: 0 0 0 0.25rem rgba(96, 165, 250, 0.25); /* ring-blue-400/50 */
+            
         }
         /* Pastikan juga semua CSS untuk preloader, video popup, dan navbar mobile ada di welcome.css */
     </style>
+    
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col justify-center items-center">

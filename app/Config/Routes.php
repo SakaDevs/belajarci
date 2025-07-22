@@ -11,9 +11,9 @@ $routes->get('contact', 'Home::contact');
 $routes->get('about', 'Home::about');
 $routes->get('profile', 'Home::profile');
 $routes->get('lowongan', 'Home::lowongan');
-$routes->get('jadwal', 'Home::jadwal');
+$routes->get('jadwal', 'jadwal::index');
 $routes->get('register', 'Home::register');
 $routes->get('auth/login', 'Home::login');
 $routes->get('lowongan/detail/(:num)', 'lowongans::findbyid/$1');
-$routes->get('lowongan', 'lowongans::search');
+$routes->get('lowongan/search', 'lowongans::search');
 
