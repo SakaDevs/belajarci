@@ -1,3 +1,5 @@
+<?php helper('auth'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -289,7 +291,15 @@
             </nav>
 
             <!-- Desktop Start Button -->
-            <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition desktop-start-btn" href="\App\Views\Auth\login">Login</a>
+             <?php if (in_groups('users')): ?>
+                <form action="<?= url_to('logout') ?>" method="post" style="display: inline;">
+                    <?= csrf_field() ?>
+                <a class="bg-red-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition desktop-start-btn" href="<?= url_to('logout') ?>">Logout</a>
+                </form>
+            <?php else: ?>
+                <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition desktop-start-btn" href="<?= url_to('login') ?>">Login</a>
+            <?php endif; ?>
+
 
             <!-- Hamburger Menu -->
             <div class="hamburger" id="hamburger">

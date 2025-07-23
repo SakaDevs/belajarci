@@ -81,7 +81,7 @@
                 <div class="relative h-64 md:h-80 bg-gray-200 flex items-center justify-center overflow-hidden">
                     <?php if (!empty($detail['gambar_poster'])) : ?>
                         <img class="w-full h-full object-cover"
-                             src="<?= htmlspecialchars($detail['gambar_poster']) ?>"
+                             src="<?= base_url('uploads/foto_lowongan/' . $detail['gambar_poster'] )?>"
                              alt="<?= htmlspecialchars($detail['judul_lowongan']) ?>" />
                     <?php else : ?>
                         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100 text-gray-500 text-xl font-medium">
@@ -107,10 +107,6 @@
                             <i class="bi bi-building text-xl mr-2 text-blue-500"></i>
                             <?= htmlspecialchars($detail['nama_perusahaan'] ?? 'N/A') ?>
                         </span>
-                        <span class="flex items-center">
-                            <i class="bi bi-geo-alt text-xl mr-2 text-purple-500"></i>
-                            <?= htmlspecialchars($detail['lokasi_penempatan'] ?? 'N/A') ?>
-                        </span>
                         <span class="flex items-center text-sm text-gray-500">
                             <i class="bi bi-calendar-event text-base mr-2"></i>
                             Diposting: <?= htmlspecialchars(date('d M Y', strtotime($detail['tanggal_posting'] ?? date('Y-m-d')))) ?>
@@ -122,7 +118,7 @@
                         <h2 class="text-xl font-semibold text-gray-800 mb-3">Job Description:</h2>
                         <p class="whitespace-pre-wrap"><?= htmlspecialchars($detail['detail_lengkap'] ?? 'No detailed description provided.') ?></p>
                         <?php if (!empty($detail['deskripsi_singkat'])) : ?>
-                            <h3 class="text-lg font-semibold text-gray-800 mt-6 mb-2">Summary:</h3>
+                            <h3 class="text-lg font-semibold text-gray-800 mt-6 mb-2">Singkatan:</h3>
                             <p><?= htmlspecialchars($detail['deskripsi_singkat']) ?></p>
                         <?php endif; ?>
                     </div>
@@ -132,7 +128,7 @@
                         <!-- Apply Button -->
                         <a href="mailto:hr@example.com?subject=Application for <?= urlencode($detail['judul_lowongan'] ?? 'Job') ?>"
                            class="btn-primary flex-1 text-white font-semibold py-3 px-6 rounded-xl text-lg shadow-md hover:shadow-lg">
-                            Apply Now
+                            Apply
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>
@@ -144,7 +140,7 @@
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                             </svg>
-                            Back to Listings
+                            Kembali ke Lowongan
                         </a>
                     </div>
                 </div>

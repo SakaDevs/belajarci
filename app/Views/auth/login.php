@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/welcome.css">
     <style>
-        /* Anda bisa memindahkan semua custom CSS dari <style> sebelumnya ke welcome.css */
-        /* Contoh style untuk form input jika tidak cukup dengan Tailwind */
         .form-input {
             width: 100%;
             padding: 0.75rem 1rem; /* p-3 px-4 */
@@ -30,7 +28,6 @@
             box-shadow: 0 0 0 0.25rem rgba(96, 165, 250, 0.25); /* ring-blue-400/50 */
             
         }
-        /* Pastikan juga semua CSS untuk preloader, video popup, dan navbar mobile ada di welcome.css */
     </style>
     
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -43,25 +40,26 @@
     <?= $this->include('layout/navbar') ?> 
 
     <div class="w-full max-w-md mx-auto p-8 bg-white rounded-lg shadow-xl my-auto" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-3xl font-light text-center text-gray-800 mb-6">Masuk ke Akun Anda</h2>
-        
-        <form action="<?= base_url('login/submit') ?>" method="POST" class="space-y-6">
+        <h2 class="text-3xl font-light text-center text-gray-800 mb-6"><?=lang('Auth.loginTitle')?></h2>
+        <?= view('Myth\Auth\Views\_message_block') ?>
+        <form action="<?= url_to('login') ?>" method="post" class="space-y-6">
+						<?= csrf_field() ?>
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="email" id="email" name="email" required class="form-input" placeholder="Masukkan alamat email Anda">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1 <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>"><?=lang('Auth.email')?></label>
+                <input type="login" id="email" name="login" required class="form-input" placeholder="<?=lang('Auth.email')?>">
             </div>
             <div>
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                <input type="password" id="password" name="password" required class="form-input" placeholder="Masukkan password Anda">
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1 <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>"><?=lang('Auth.password')?></label>
+                <input type="password" id="password" name="password" required class="form-input" placeholder="<?=lang('Auth.password')?>">
             </div>
             
             <button type="submit" class="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 transition focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 font-semibold text-lg">
-                Masuk
+                <?=lang('Auth.loginAction')?>
             </button>
         </form>
 
         <p class="text-center text-sm text-gray-600 mt-6">
-            Belum punya akun? <a href="<?= base_url('register') ?>" class="text-blue-400 hover:underline">Daftar di sini</a>
+            <a href="<?= url_to('register') ?>" class="text-blue-400 hover:underline"><?=lang('Auth.needAnAccount')?></a>
         </p>
     </div>
 
@@ -81,4 +79,4 @@
         });
     </script>
 </body>
-</html>
+</html>     

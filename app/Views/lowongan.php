@@ -88,7 +88,8 @@
                 <h1 class="text-4xl font-bold text-gray-900 mb-4">Available Jobs</h1>
             </div>
             
-            
+ 
+
     <!-- Search Bar -->
     <form class="max-w-md mx-auto mb-10" method="get" action="<?= base_url('lowongan/search') ?>">   
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -101,6 +102,13 @@
             <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search... " required name="keyword"/>
             <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
         </div>
+        <?php if(in_groups('admin')): ?>
+            <div class="text-center mt-6">
+                <a href="<?= base_url('lowongan/tambah') ?>" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+                    + Tambah Lowongan
+                </a>
+            </div>
+        <?php endif; ?>
     </form>
 
 
@@ -111,8 +119,8 @@
                     <!-- Card Image -->
                     <div class="relative">
                         <img class="w-full h-48 object-cover" 
-                             src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                             alt="<?= htmlspecialchars($v['judul_lowongan']) ?>" />
+                             src="<?= base_url('uploads/foto_lowongan/' . $v['gambar_poster'] )?>" 
+                             alt="<?= htmlspecialchars($v['gambar_poster']) ?>" />
                     </div>
                     
                     <!-- Card Content -->
@@ -125,12 +133,12 @@
                             </div>
                             
                             <!-- Job Title -->
-                            <h3 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2 min-h-[3.5rem]">
+                            <h3 class="text-lg font-bold text-gray-900 line-clamp-2 min-h-[3.5rem]">
                                 <?= htmlspecialchars($v['judul_lowongan']) ?>
                             </h3>
                             
                             <!-- Job Description -->
-                            <p class="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed min-h-[4.5rem]">
+                            <p class="text-gray-600 mb-2 text-sm leading-relaxed min-h-[4.5rem]"> 
                                 <?= htmlspecialchars($v['detail_lengkap']) ?>
                             </p>
                             
@@ -156,6 +164,23 @@
                                     </svg>
                                 </span>
                             </a>
+                            <?php if(in_groups('admin')): ?>
+                            <div class="flex items-center gap-5 justify-center">
+                                <div class="text-center mt-4">
+                                    <a href="/lowongan/edit/<?= $v['id']?>" class="bg-green-600 hover:bg-green-700 text-white text-center rounded p-2">
+                                        Edit
+                                    </a>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <form action="/lowongan/delete/<?= $v['id'] ?>" method="post" onsubmit="return confirm('Apakah kamu yakin ingin menghapus lowongan ini?');">
+                                        <?= csrf_field() ?>
+                                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-center rounded p-2">
+                                            Delete
+                                        </button>
+                                    </form>
+                                </div>
+                                <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>

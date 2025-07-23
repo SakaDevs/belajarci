@@ -41,24 +41,28 @@
     <?= $this->include('layout/navbar') ?> 
 
     <div class="w-full max-w-md mx-auto p-8 bg-white rounded-lg shadow-xl my-auto" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-3xl font-light text-center text-gray-800 mb-6">Daftar Akun Baru</h2>
-        
-        <form action="<?= base_url('register/submit') ?>" method="POST" class="space-y-6">
+        <h2 class="text-3xl font-light text-center text-gray-800 mb-6"><?=lang('Auth.register')?></h2>
+        <?= view('Myth\Auth\Views\_message_block') ?>
+         <form action="<?= url_to('register') ?>" method="post" class="space-y-6">
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="email" id="email" name="email" required class="form-input" placeholder="Masukkan alamat email Anda">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1 <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"><?=lang('Auth.email')?></label>
+                <input type="email" id="email" name="email" required class="form-input" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>">
             </div>
             <div>
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                <input type="password" id="password" name="password" required class="form-input" placeholder="Buat password Anda">
+                <label for="username" class="block text-sm font-medium text-gray-700 mb-1"><?=lang('Auth.username')?></label>
+                <input type="text" id="email" name="username" required class="form-input <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>">
             </div>
             <div>
-                <label for="confirm_password" class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" required class="form-input" placeholder="Konfirmasi password Anda">
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-1"><?=lang('Auth.password')?></label>
+                <input type="password"  name="password" required class="form-input <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>" autocomplete="off">
+            </div>
+            <div>
+                <label for="pass_confirm" class="block text-sm font-medium text-gray-700 mb-1"><?=lang('Auth.repeatPassword')?></label>
+                <input type="password" name="pass_confirm" required class="form-input <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
             </div>
             
             <button type="submit" class="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 transition focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 font-semibold text-lg">
-                Daftar
+                <?=lang('Auth.register')?>
             </button>
         </form>
 
