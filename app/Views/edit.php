@@ -21,6 +21,7 @@
         }
     </style>
 </head>
+
 <?php include('layout/navbar.php') ?>
 <body class="bg-gray-50 min-h-screen py-10 px-4">
     <div class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100 justify-center mt-20">
@@ -35,11 +36,11 @@
                 </ul>
             </div>
         <?php endif; ?>
-
-        <form action="<?= base_url('lowongan/update/' . $lowongan['id']) ?>" method="post" enctype="multipart/form-data">
+        <?php foreach($data as $lowongan):?>
+        <form action="<?= base_url('jadwal/edit/' . $lowongan['id']) ?>" method="post" enctype="multipart/form-data">
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Judul Lowongan</label>
-                <input type="text" name="judul_lowongan" class="w-full p-3 border border-gray-300 rounded-xl" value="<?= old('judul_lowongan') ?>" required>
+                <input type="text" name="judul_lowongan" class="w-full p-3 border border-gray-300 rounded-xl" value="<?= $lowongan['judul_lowongan']?>" required>
             </div>
 
             <div class="mb-4">
@@ -49,12 +50,12 @@
             
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Deskripsi Singkat</label>
-                <textarea name="deskripsi_singkat" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required><?= old('deskripsi_singkat') ?></textarea>
+                <textarea name="deskripsi_singkat" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required><?= old('deskripsi_singkat') ?><?=$lowongan['deskripsi_singkat']?></textarea>
             </div>
 
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Nama Perusahaan</label>
-                <input type="text" name="nama_perusahaan" class="w-full p-3 border border-gray-300 rounded-xl" value="<?= old('nama_perusahaan') ?>" required>
+                <input type="text" name="nama_perusahaan" class="w-full p-3 border border-gray-300 rounded-xl" value="<?= $lowongan['nama_perusahaan']?>" required>
             </div>
 
             <div class="mb-6">
@@ -67,6 +68,7 @@
                 <a href="<?= base_url('lowongan') ?>" class="text-gray-600 hover:underline self-center">Batal</a>
             </div>
         </form>
+        <?php endforeach;?>
     </div>
 </body>
 </html>

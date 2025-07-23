@@ -17,39 +17,58 @@
 
     <section id="jadwal-pelatihan-section" class="py-12 bg-white  mt-15">
         <div class="container mx-auto px-4 max-w-screen-xl"> 
-            <h2 class="text-3xl font-light text-center text-gray-800 mb-8">Daftar Jadwal Pelatihan PPKD Jakut</h2>
+            <h2 class="text-3xl font-light text-center text-gray-800 mb-4">Daftar Jadwal Pelatihan PPKD Jakut</h2>
+            <div class="text-center my-6">
+                <a href="<?= base_url('jadwal/tambah') ?>" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+                    + Tambah Jadwal
+                </a>
+            </div>
             
             <div class="overflow-x-auto shadow-lg rounded-lg"> 
-                <?php foreach($model as $jadwal): ?>
-                    <table class="min-w-full divide-y divide-gray-200" id="jadwal-table">
-                        <thead class="bg-blue-400 text-white">
-                            <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tl-lg">Program Pelatihan</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Angkatan</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Tutup Pendaftaran</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Seleksi</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Seleksi</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Pelatihan</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Pelatihan</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Awal Uji Kompetensi</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tr-lg">Akhir Uji Kompetensi</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
+                <table class="min-w-full divide-y divide-gray-200" id="jadwal-table">
+                    <thead class="bg-blue-400 text-white">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tl-lg">Program Pelatihan</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Angkatan</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Tutup Pendaftaran</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Seleksi</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Seleksi</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Pelatihan</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Pelatihan</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Awal Uji Kompetensi</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Uji Kompetensi</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tr-lg">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                            <?php foreach($model as $jadwal): ?>
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['nama_program'] ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['angkatan'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['tutup_pendaftaran'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['mulai_seleksi'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['akhir_seleksi'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['mulai_pelatihan'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['akhir_pelatihan'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['awal_kompetensi'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['akhir_kompetensi'] ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['tutup_pendaftaran'])) ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['mulai_seleksi'])) ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['akhir_seleksi'])) ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['mulai_pelatihan']))  ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['akhir_pelatihan']))  ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['awal_kompetensi']))  ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['akhir_kompetensi']))  ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex gap-3">
+                                    <form action="/jadwal/delete/<?=$jadwal['id']?>" method="post" onsubmit="return confirm('Apakah kamu yakin ingin menghapus jadwal ini?');">
+                                        <?= csrf_field() ?>
+                                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-center rounded p-2">
+                                            Delete
+                                        </button>
+                                    </form>
+                                    <a href="/jadwal/edit/<?=$jadwal['id']?>" class="bg-green-600 hover:bg-green-700 text-white text-center rounded p-2">
+                                        Edit
+                                    </a>
+                                </div>
+                                <?php endforeach; ?>
+                            </td>
                             </tr>
                         </tbody>
                     </table>
-                    <?php endforeach; ?>
             </div>
         </div>
     </section>

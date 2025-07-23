@@ -12,6 +12,44 @@ class Jadwal extends BaseController
     {
         $model = (new JadwalModel())->findAll();
         return view("jadwal", compact("model"));
+    }
+    public function delete($id)
+    {
+        $jadwalModel = new JadwalModel();
 
+        $jadwalModel->delete($id);
+        return redirect()->to('/jadwal')->with('success','Lowongan Berhasil Dihapus');
+
+    }
+    public function tambah()
+    {
+        return view('tambah_jadwal');
+    }
+
+    public function simpan()
+    {
+        $data = [
+            'nama_program' => $this->request->getPost('nama_program'),
+            'angkatan' => $this->request->getPost('angkatan'),
+            'tutup_pendaftaran' => $this->request->getPost('tutup_pendaftaran'),
+            'mulai_seleksi' => $this->request->getPost('mulai_seleksi'),
+            'akhir_seleksi' => $this->request->getPost('akhir_seleksi'),
+            'mulai_pelatihan' => $this->request->getPost('mulai_pelatihan'),
+            'akhir_pelatihan' => $this->request->getPost('akhir_pelatihan'),
+            'awal_kompetensi' => $this->request->getPost('awal_kompetensi'),
+            'akhir_kompetensi' => $this->request->getPost('akhir_kompetensi'),
+        ];
+
+        $jadwalModel = new JadwalModel();
+        $jadwalModel->insert($data);
+        return redirect()->to('/jadwal')->with('success','Lowongan Berhasil Ditambahkan');
+    }
+
+    public function edit($id)
+    {
+        $jadwalModel = new jadwalModel();
+        $data = $jadwalModel->findAll();
+
+        return view('edit_jadwal', compact('data'));
     }
 }

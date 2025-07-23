@@ -68,7 +68,7 @@ class Lowongans extends BaseController
         if (!$data['lowongan']) {
             return redirect()->to('/lowongan')->with('error','');
         }
-        return view('edit', $data);
+        return view('edit', compact('data'));
     }
     public function update($id){
         $lowonganModel = new LowonganModel();
