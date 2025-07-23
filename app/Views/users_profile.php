@@ -253,7 +253,7 @@
 
                         <!-- Tombol Logout -->
                         <div class="flex justify-end pt-6">
-                            <form action="<?= url_to('logout') ?>" method="post">
+                            <form action="/logout" method="get">
                                 <?= csrf_field() ?>
                                 <button type="submit" class="btn-secondary px-6 py-3 text-white font-medium rounded-2xl flex items-center">
                                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
