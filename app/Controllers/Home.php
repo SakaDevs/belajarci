@@ -25,4 +25,10 @@ class Home extends BaseController
   
         return view('lowongan', compact('lowongan'));
     }
+    public function users($id)
+    {
+        $users = new \Myth\Auth\Models\UserModel();
+        $detail = $users->where('id', $id)->first();
+        return view('users_profile', compact('detail'));
+    }
 }

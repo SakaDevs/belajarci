@@ -21,4 +21,5 @@ $routes->get('lowongan/edit/(:num)', 'lowongans::edit/$1', ['filter' => 'role:ad
 $routes->post('lowongan/update/(:num)', 'lowongans::update/$1', ['filter' => 'role:admin']);
 $routes->post('lowongan/delete/(:num)', 'lowongans::delete/$1', ['filter' => 'role:admin']);
 $routes->post('lowongan/simpan', 'lowongans::simpan');
-
+$routes->get('users', 'admin::users');
+$routes->get('users_profile/(:num)', 'home::users/$1');

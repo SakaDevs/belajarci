@@ -287,18 +287,25 @@
                             <li><a href="#">Kolaborasi Pelatihan</a></li>
                         </ul>
                     </li>
+                    <?php if(in_groups('admin')): ?>
+                    <li><a href="/users">Users</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
 
             <!-- Desktop Start Button -->
-             <?php if (in_groups('users')): ?>
-                <form action="<?= url_to('logout') ?>" method="post" style="display: inline;">
-                    <?= csrf_field() ?>
-                <a class="bg-red-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition desktop-start-btn" href="<?= url_to('logout') ?>">Logout</a>
-                </form>
-            <?php else: ?>
-                <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-[#81beffff] transition desktop-start-btn" href="<?= url_to('login') ?>">Login</a>
-            <?php endif; ?>
+            <?php if (logged_in()): ?>
+    <?php $userId = user_id(); ?>
+    <a class="bg-green-500 py-2 px-6 rounded-md text-white hover:bg-green-600 transition desktop-start-btn"
+       href="<?= site_url('users_profile/' . $userId) ?>">
+        My Profile
+    </a>
+<?php else: ?>
+    <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-blue-500 transition desktop-start-btn"
+       href="<?= url_to('login') ?>">
+        Login
+    </a>
+<?php endif; ?>
 
 
             <!-- Hamburger Menu -->
@@ -340,6 +347,7 @@
                         <li><a href="#">Kolaborasi Pelatihan</a></li>
                     </ul>
                 </li>
+                <li><a href="">Users</a></li>
             </ul>
             
             <a href="/#services" class="mobile-start-btn">Mulai</a>
