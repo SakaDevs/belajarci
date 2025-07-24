@@ -14,26 +14,27 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body x-data="{ isVideoModalOpen: false }" @keydown.escape.window="isVideoModalOpen: false">
     <?php include('layout/navbar.php'); ?>
+
     <div class="hero flex min-h-screen flex-col items-center justify-center px-4 text-center sm:mt-0">
-    <img src="https://ppkdju.com/static/img/hero.jpg" alt="Hero Image" id="images" class="h-56 w-auto sm:h-96" />
-    <h1 class="mt-8 text-3xl font-light sm:text-4xl mdx:text-cyan-400">Selamat datang <span class="text-cyan-300 font-light">Jaknaker</span></h1>
-    <h1 class="mt-4 text-lg font-light sm:text-xl">Tingkatkan kompetensi mu untuk raih karir yang kamu inginkan, <strong>GRATIS!</strong></h1>
-    <div class="mt-8 flex w-full max-w-xs flex-col items-center gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:gap-2">
-        <a class="w-full rounded-md bg-blue-400 py-2 px-6 text-white transition hover:bg-[#81beffff] sm:w-auto" href="/#services">Mulai</a>
-        <div class="playbutton w-full sm:w-auto">
-            <a href="#" class="flex w-full items-center justify-center gap-2 rounded-md py-2 px-6 text-blue-400 transition hover:text-[#81beffff] sm:w-auto">
-                <i class="bi bi-play-circle text-2xl"></i>
-                <span>Tonton Video</span>
-            </a>
+        <img src="https://ppkdju.com/static/img/hero.jpg" alt="Hero Image" id="images" class="h-56 w-auto sm:h-96" data-aos="zoom-in" data-aos-duration="1000" />
+        <h1 class="mt-8 text-3xl font-light sm:text-4xl mdx:text-cyan-400" data-aos="fade-up" data-aos-delay="200">Selamat datang <span class="text-cyan-300 font-light">Jaknaker</span></h1>
+        <h1 class="mt-4 text-lg font-light sm:text-xl" data-aos="fade-up" data-aos-delay="400">Tingkatkan kompetensi mu untuk raih karir yang kamu inginkan, <strong>GRATIS!</strong></h1>
+        <div class="mt-8 flex w-full max-w-xs flex-col items-center gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:gap-2" data-aos="fade-up" data-aos-delay="600">
+            <a class="w-full rounded-md bg-blue-400 py-2 px-6 text-white transition hover:bg-[#81beffff] sm:w-auto" href="/#services">Mulai</a>
+            <div class="playbutton w-full sm:w-auto">
+                <a href="#" @click.prevent="isVideoModalOpen = true" class="flex w-full items-center justify-center gap-2 rounded-md py-2 px-6 text-blue-400 transition hover:text-[#81beffff] sm:w-auto">
+                    <i class="bi bi-play-circle text-2xl"></i>
+                    <span>Tonton Video</span>
+                </a>
+            </div>
         </div>
-    </div>
     </div>
 
 
     <div class="bg-gray-700 grid grid-cols-1 p-10 gap-8 sm:grid-cols-3 text-white justify-items-center transition delay-150 duration-300 ease-in-out">
-        <div class="cursor-pointer max-w-sm p-6 rounded-lg flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:bg-gray-600 group" data-aos="fade-up" data-aos-duration="1000">
+        <div class="cursor-pointer max-w-sm p-6 rounded-lg flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:bg-gray-600 group" data-aos="fade-up" data-aos-delay="100">
             <div class="mb-4 text-blue-400 transition-colors duration-300 group-hover:text-blue-300">
                 <i class="bi bi-person-workspace text-5xl group-hover:scale-110 transition-transform duration-300"></i>
             </div>
@@ -41,7 +42,7 @@
             <p class="text-sm leading-relaxed text-gray-300 transition-colors duration-300 group-hover:text-white">Pelatihan kerja yang menitikberatkan pada penguasaan kemampuan kerja. Kemampuan kerja tersebut mencakup pengetahuan, keterampilan, dan sikap sesuai standar yang ditetapkan di tempat kerja.</p>
         </div>
 
-        <div class="cursor-pointer max-w-sm p-6 rounded-lg flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:bg-gray-600 group" data-aos="fade-up" data-aos-duration="1500">
+        <div class="cursor-pointer max-w-sm p-6 rounded-lg flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:bg-gray-600 group" data-aos="fade-up" data-aos-delay="200">
             <div class="mb-4 text-blue-400 transition-colors duration-300 group-hover:text-blue-300">
                 <i class="bi bi-award text-5xl group-hover:scale-110 transition-transform duration-300"></i>
             </div>
@@ -49,7 +50,7 @@
             <p class="text-sm leading-relaxed text-gray-300 transition-colors duration-300 group-hover:text-white">Sertifikasi Badan Nasional Standardisasi Profesi (BNSP) melalui Uji Kompetensi yang dilaksanakan oleh Lembaga Sertifikasi Profesi di PPKD Jakarta Utara.</p>
         </div>
 
-        <div class="cursor-pointer max-w-sm p-6 rounded-lg flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:bg-gray-600 group" data-aos="fade-up" data-aos-duration="2000">
+        <div class="cursor-pointer max-w-sm p-6 rounded-lg flex flex-col items-center text-center transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:bg-gray-600 group" data-aos="fade-up" data-aos-delay="300">
             <div class="mb-4 text-blue-400 transition-colors duration-300 group-hover:text-blue-300">
                 <i class="bi bi-briefcase text-5xl group-hover:scale-110 transition-transform duration-300"></i>
             </div>
@@ -58,9 +59,8 @@
         </div>
     </div>
 
-    <!-- ABOUT -->
     <div id="about" class="pt-20 mt-8 pb-10">
-        <h1 class="text-4xl text-center font-light text-gray-800 mb-10" data-aos="fade-up" data-aos-duration="2000">Tentang PPKD JAKUT</h1>
+        <h1 class="text-4xl text-center font-light text-gray-800 mb-10" data-aos="fade-up">Tentang PPKD JAKUT</h1>
     </div>
     <div class="flex flex-col lg:flex-row justify-center items-start mx-auto px-4 md:px-8 lg:px-16 max-w-7xl gap-8 mb-20">
         <div class="w-full lg:w-1/2 flex justify-center lg:justify-end" data-aos="fade-right" data-aos-duration="1000">
@@ -107,16 +107,15 @@
         </div>
     </div>
 
-    <!-- LAYANAN -->
     <div id="layanan" class="pt-20 mt-8 pb-10">
     <section class="bg-slate-800 py-16 sm:py-20" >
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl text-center" data-aos="fade-up" data-aos-duration="1000">
+            <div class="mx-auto max-w-2xl text-center" data-aos="fade-up">
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl" >Layanan</h2>
                 <p class="mt-2 text-lg leading-8 text-slate-400">Pelatihan yang disediakan PPKD Jakarta Utara</p>
             </div>
             <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                <article class="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"  data-aos="fade-up" data-aos-duration="2000" >
+                <article class="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://ppkdju.com/static/img/regular/800x600/grafis.jpg" alt="Suasana pelatihan reguler di dalam ruangan komputer." class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60"></div>
                     <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
@@ -131,7 +130,7 @@
                         <p class="mt-4 text-slate-300">Pelatihan Kerja berbasis Kompetensi yang dilaksanakan di PPKD Jakarta Utara (In-House Training).</p>
                     </div>
                 </article>
-                <article class="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up" data-aos-duration="2000">
+                <article class="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up" data-aos-delay="200">
                     <img src="https://ppkdju.com/static/img/mtu/800x600/motor.jpg" alt="Pelatihan teknis otomotif di luar ruangan." class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60"></div>
                     <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300" >
@@ -146,7 +145,7 @@
                         <p class="mt-4 text-slate-300">Pelatihan Kerja yang dilaksanakan di tempat pemohon, seperti di Aula RW, Karangtaruna, Kantor PKK, dll.</p>
                     </div>
                 </article>
-                <article class="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up" data-aos-duration="2000">
+                <article class="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up" data-aos-delay="300">
                     <img src="https://ppkdju.com/static/img/kolaborasiptpl.jpg" alt="Sekelompok orang dalam sebuah seminar atau kolaborasi." class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110">
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60"></div>
                     <div class="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
@@ -168,204 +167,164 @@
 
     
     <section x-data="{ activeStep: 0 }" class="pt-20 pb-10 bg-white">
-    <h1 class="text-4xl text-center font-light text-gray-800 mb-10" data-aos="fade-up" data-aos-duration="2000">
-        Alur Pelatihan Reguler
-    </h1>
+        <h1 class="text-4xl text-center font-light text-gray-800 mb-10" data-aos="fade-up">
+            Alur Pelatihan Reguler
+        </h1>
 
-    <!-- Step Cards -->
-    <div class="grid grid-cols-2 text-xl sm:grid-cols-3 lg:grid-cols-6 gap-4 px-4 md:px-8 max-w-7xl mx-auto mb-12 text-center">
-        <template x-for="(step, index) in [
-            { label: 'Pendaftaran Pelatihan', icon: '📝' },
-            { label: 'Pemanggilan Seleksi', icon: '📞' },
-            { label: 'Seleksi', icon: '🧪' },
-            { label: 'Pengumuman', icon: '📢' },
-            { label: 'Proses Pelatihan', icon: '🏫' },
-            { label: 'Uji Kompetensi', icon: '🎓' }
-        ]" :key="index">
-            <div 
-                @click="activeStep = index"
-                :class="{
-                    'bg-cyan-600 text-white shadow-lg': activeStep === index,
-                    'bg-white text-gray-600': activeStep !== index
-                }"
-                class="cursor-pointer rounded-lg border border-gray-200 p-4 transition duration-200 ease-in-out hover:shadow-md"
-            >
-                <div class="text-2xl mb-2" x-text="step.icon"></div>
-                <div class="text-sm font-medium" x-text="step.label"></div>
-            </div>
-        </template>
-    </div>
-
-    <!-- Content with Image Side-by-Side -->
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 min-h-[400px]">
-        <!-- LEFT: Dynamic Content -->
-        <div class="space-y-4 text-gray-800 leading-relaxed">
-            <div x-show="activeStep === 0" x-transition>
-                <h2 class="text-2xl font-semibold">Pendaftaran Pelatihan</h2>
-                <p>Pendaftaran dapat dilaksanakan secara <strong>online</strong> melalui website atau datang langsung ke PPKD Jakarta Utara. Persyaratannya antara lain:</p>
-                <ul class="">
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Warga DKI Jakarta (Scan KTP / Surat Domisili)</li>
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Usia minimal 17 tahun</li>
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan Kartu Keluarga</li>
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan Ijazah terakhir</li>
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan pas foto 3x4 background merah</li>
-                </ul>
-                <p class="mt-2"><strong>Peserta akan menerima pesan WhatsApp</strong> untuk proses seleksi selanjutnya.</p>
-            </div>
-            <div x-show="activeStep === 1" x-transition>
-                <h2 class="text-2xl font-semibold">Pemanggilan Seleksi</h2>
-                <p>Calon peserta pelatihan yang sudah mendaftar akan dipanggil untuk melaksanakan seleksi melalui Whatsapp, info pemanggilan seleksi berupa</p>
-                 <ul class="">
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Warga DKI Jakarta (Scan KTP / Surat Domisili)</li>
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Usia minimal 17 tahun</li>
-                    <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan Kartu Keluarga</li>
-                </ul>
-                <p class="mt-2">Calon peserta diminta untuk konfirmasi kehadiran seleksi melalui pesan Whatsapp yang ada.</p> 
-            </div>
-            <div x-show="activeStep === 2" x-transition>
-                <h2 class="text-2xl font-semibold">Seleksi</h2>
-                <p>Meliputi tes minat dan bakat atau wawancara untuk menentukan jurusan yang sesuai.</p>
-            </div>
-            <div x-show="activeStep === 3" x-transition>
-                <h2 class="text-2xl font-semibold">Pengumuman</h2>
-                <p>Hasil seleksi diumumkan melalui website dan WhatsApp. Peserta yang lolos akan lanjut ke pelatihan.</p>
-            </div>
-            <div x-show="activeStep === 4" x-transition>
-                <h2 class="text-2xl font-semibold">Proses Pelatihan</h2>
-                <ul class="list-disc list-inside space-y-1">
-                    <li>Instruktur bersertifikat</li>
-                    <li>Materi softskill & hard skill</li>
-                    <li>Kunjungan industri</li>
-                    <li>Snack & makan siang</li>
-                </ul>
-            </div>
-            <div x-show="activeStep === 5" x-transition>
-                <h2 class="text-2xl font-semibold">Uji Kompetensi</h2>
-                <p>Peserta mengikuti uji kompetensi bersertifikat setelah pelatihan selesai.</p>
-            </div>
+        <div class="grid grid-cols-2 text-xl sm:grid-cols-3 lg:grid-cols-6 gap-4 px-4 md:px-8 max-w-7xl mx-auto mb-12 text-center">
+            <template x-for="(step, index) in [
+                { label: 'Pendaftaran Pelatihan', icon: '📝' },
+                { label: 'Pemanggilan Seleksi', icon: '📞' },
+                { label: 'Seleksi', icon: '🧪' },
+                { label: 'Pengumuman', icon: '📢' },
+                { label: 'Proses Pelatihan', icon: '🏫' },
+                { label: 'Uji Kompetensi', icon: '🎓' }
+            ]" :key="index">
+                <div 
+                    @click="activeStep = index"
+                    :class="{
+                        'bg-cyan-600 text-white shadow-lg': activeStep === index,
+                        'bg-white text-gray-600': activeStep !== index
+                    }"
+                    class="cursor-pointer rounded-lg border border-gray-200 p-4 transition duration-200 ease-in-out hover:shadow-md"
+                    data-aos="fade-up"
+                    :data-aos-delay="index * 100"
+                >
+                    <div class="text-2xl mb-2" x-text="step.icon"></div>
+                    <div class="text-sm font-medium" x-text="step.label"></div>
+                </div>
+            </template>
         </div>
 
-        <!-- RIGHT: Image Changes Based on Step -->
-        <div class="w-full" x-show="true">
-            <template x-if="activeStep === 0">
-                <img src="https://ppkdju.com/static/img/features-1.jpg" alt="Pendaftaran" class="w-full h-auto max-w-md mx-auto" />
-            </template>
-            <template x-if="activeStep === 1">
-                <img src="https://ppkdju.com/static/img/features-2.jpg" alt="Pemanggilan" class="w-full h-auto max-w-md mx-auto" />
-            </template>
-            <template x-if="activeStep === 2">
-                <img src="https://ppkdju.com/static/img/features-2.svg" alt="Seleksi" class="w-full h-auto max-w-md mx-auto" />
-            </template>
-            <template x-if="activeStep === 3">
-                <img src="https://ppkdju.com/static/img/features-4.svg" alt="Pengumuman" class="w-full h-auto max-w-md mx-auto" />
-            </template>
-            <template x-if="activeStep === 4">
-                <img src="https://ppkdju.com/static/img/features-5.svg" alt="Pelatihan" class="w-full h-auto max-w-md mx-auto" />
-            </template>
-            <template x-if="activeStep === 5">
-                <img src="https://ppkdju.com/static/img/ujk.png" alt="Uji Kompetensi" class="w-full h-auto max-w-md mx-auto" />
-            </template>
-        </div>
-     </div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 min-h-[400px]" data-aos="fade-up" data-aos-delay="300">
+            <div class="space-y-4 text-gray-800 leading-relaxed px-4">
+                <div x-show="activeStep === 0" x-transition>
+                    <h2 class="text-2xl font-semibold">Pendaftaran Pelatihan</h2>
+                    <p>Pendaftaran dapat dilaksanakan secara <strong>online</strong> melalui website atau datang langsung ke PPKD Jakarta Utara. Persyaratannya antara lain:</p>
+                    <ul class="">
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Warga DKI Jakarta (Scan KTP / Surat Domisili)</li>
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Usia minimal 17 tahun</li>
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan Kartu Keluarga</li>
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan Ijazah terakhir</li>
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan pas foto 3x4 background merah</li>
+                    </ul>
+                    <p class="mt-2"><strong>Peserta akan menerima pesan WhatsApp</strong> untuk proses seleksi selanjutnya.</p>
+                </div>
+                <div x-show="activeStep === 1" x-transition>
+                    <h2 class="text-2xl font-semibold">Pemanggilan Seleksi</h2>
+                    <p>Calon peserta pelatihan yang sudah mendaftar akan dipanggil untuk melaksanakan seleksi melalui Whatsapp, info pemanggilan seleksi berupa</p>
+                     <ul class="">
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Warga DKI Jakarta (Scan KTP / Surat Domisili)</li>
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Usia minimal 17 tahun</li>
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Scan Kartu Keluarga</li>
+                    </ul>
+                    <p class="mt-2">Calon peserta diminta untuk konfirmasi kehadiran seleksi melalui pesan Whatsapp yang ada.</p> 
+                </div>
+                <div x-show="activeStep === 2" x-transition>
+                    <h2 class="text-2xl font-semibold">Seleksi</h2>
+                    <p>Seleksi masing-masing program pelatihan terbagi menjadi 2 tahap :</p>
+                    <ul class="">
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Seleksi Tertulis </li>
+                        <li><i class="bi bi-check-square-fill text-cyan-500 h-5"></i> Seleksi Wawancara</li>
+                    </ul>
+                    <p class="mt-2">Peserta pelatihan diminta membawa smartphone untuk pelaksanaan seleksi tertulis.</p> 
+                    <p class="mt-2">Setelah seleksi tertulis, dilanjutkan seleksi wawancara oleh instruktur pengampu program pelatihan.</p> 
+                </div>
+                <div x-show="activeStep === 3" x-transition>
+                    <h2 class="text-2xl font-semibold">Pengumuman</h2>
+                    <p>Hasil seleksi diumumkan melalui website dan WhatsApp. Peserta yang lolos akan lanjut ke pelatihan.</p>
+                </div>
+                <div x-show="activeStep === 4" x-transition>
+                    <h2 class="text-2xl font-semibold">Proses Pelatihan</h2>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Instruktur bersertifikat</li>
+                        <li>Materi softskill & hard skill</li>
+                        <li>Kunjungan industri</li>
+                        <li>Snack & makan siang</li>
+                    </ul>
+                </div>
+                <div x-show="activeStep === 5" x-transition>
+                    <h2 class="text-2xl font-semibold">Uji Kompetensi</h2>
+                    <p>Peserta mengikuti uji kompetensi bersertifikat setelah pelatihan selesai.</p>
+                </div>
+            </div>
+
+            <div class="w-full flex items-center justify-center px-4">
+                <template x-if="activeStep === 0"><img src="https://ppkdju.com/static/img/features-1.jpg" alt="Pendaftaran" class="w-full h-auto max-w-md mx-auto rounded-lg shadow-md" /></template>
+                <template x-if="activeStep === 1"><img src="https://ppkdju.com/static/img/features-2.jpg" alt="Pemanggilan" class="w-full h-auto max-w-md mx-auto rounded-lg shadow-md" /></template>
+                <template x-if="activeStep === 2"><img src="https://ppkdju.com/static/img/features-2.svg" alt="Seleksi" class="w-full h-auto max-w-md mx-auto" /></template>
+                <template x-if="activeStep === 3"><img src="https://ppkdju.com/static/img/features-4.svg" alt="Pengumuman" class="w-full h-auto max-w-md mx-auto" /></template>
+                <template x-if="activeStep === 4"><img src="https://ppkdju.com/static/img/features-5.svg" alt="Pelatihan" class="w-full h-auto max-w-md mx-auto" /></template>
+                <template x-if="activeStep === 5"><img src="https://ppkdju.com/static/img/ujk.png" alt="Uji Kompetensi" class="w-full h-auto max-w-md mx-auto rounded-lg shadow-md" /></template>
+            </div>
+       </div>
     </section>
 
 
-     <div x-data="{ tab: 'unduh' }" class="bg-gray-700 text-white p-8 max-h-auto">
-        <!-- JUDUL -->
-        <h2 class="text-5xl tracking-tight text-white sm:text-5xl text-center m-20 font-light" >Alur Pelatihan MTU</h2>
+    <div x-data="{ tab: 'unduh' }" class="bg-gray-700 text-white p-8 max-h-auto" data-aos="fade-up">
+        <h2 class="text-3xl tracking-tight text-white sm:text-5xl text-center m-20 font-light" >Alur Pelatihan MTU</h2>
 
-        <!-- TAB MENU -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 justify-center mb-8 max-w-6xl mx-auto">
-            <div
-            @click="tab = 'unduh'"
-            :class="tab === 'unduh' ? 'bg-cyan-500' : 'bg-gray-600'"
-            class="p-5 rounded shadow cursor-pointer transition"
-            >
-            <div class="text-2xl text-center">🔍</div>
-            <div class="font-semibold text-base ">Unduh Format Surat Permohonan Pelatihan MTU</div>
+            <div @click="tab = 'unduh'" :class="tab === 'unduh' ? 'bg-cyan-500' : 'bg-gray-600'" class="p-5 rounded shadow cursor-pointer transition" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-2xl text-center">🔍</div>
+                <div class="font-semibold text-base text-center">Unduh Format Surat Permohonan</div>
             </div>
-            <div
-            @click="tab = 'pengajuan'"
-            :class="tab === 'pengajuan' ? 'bg-purple-600' : 'bg-gray-600'"
-            class="p-5 rounded shadow cursor-pointer transition"
-            >
-            <div class="text-2xl text-center">📦</div>
-            <div class="font-semibold text-base">Pengajuan Permohonan Pelatihan MTU</div>
+            <div @click="tab = 'pengajuan'" :class="tab === 'pengajuan' ? 'bg-purple-600' : 'bg-gray-600'" class="p-5 rounded shadow cursor-pointer transition" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-2xl text-center">📦</div>
+                <div class="font-semibold text-base text-center">Pengajuan Permohonan</div>
             </div>
-            <div
-            @click="tab = 'survey'"
-            :class="tab === 'survey' ? 'bg-green-600' : 'bg-gray-600'"
-            class="p-5 rounded shadow cursor-pointer text-center transition"
-            >
-            <div class="text-2xl">🌍</div>
-            <div class="font-semibold">Survey Lokasi</div>
+            <div @click="tab = 'survey'" :class="tab === 'survey' ? 'bg-green-600' : 'bg-gray-600'" class="p-5 rounded shadow cursor-pointer text-center transition" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-2xl">🌍</div>
+                <div class="font-semibold">Survey Lokasi</div>
             </div>
-            <div
-            @click="tab = 'pelatihan'"
-            :class="tab === 'pelatihan' ? 'bg-blue-600' : 'bg-gray-600'"
-            class="p-5 rounded shadow cursor-pointer  text-center transition"
-            >
-            <div class="text-2xl text-center">📋</div>
-            <div class="font-semibold">Proses Pelatihan</div>
+            <div @click="tab = 'pelatihan'" :class="tab === 'pelatihan' ? 'bg-blue-600' : 'bg-gray-600'" class="p-5 rounded shadow cursor-pointer text-center transition" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-2xl text-center">📋</div>
+                <div class="font-semibold">Proses Pelatihan</div>
             </div>
         </div>
 
-        <!-- KONTEN -->
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto max-h-auto">
-            <!-- KONTEN TEKS -->
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto max-h-auto px-4" data-aos="fade-up" data-aos-delay="500">
             <div>
-            <template x-if="tab === 'unduh'">
-                <div>
-                <h3 class="text-xl font-bold mb-2">Unduh Contoh Surat Permohonan Pelatihan MTU</h3>
-                <p class="mb-4">Pelatihan MTU merupakan pelatihan yang dilaksanakan di tempat pemohon seperti LMK, Balai RT/RW. Ajukan surat permohonan kolektif minimal 10 peserta.</p>
-                <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded">Unduh Surat Permohonan</a>
-                </div>
-            </template>
-
-            <template x-if="tab === 'pengajuan'">
-                <div>
-                <h3 class="text-xl font-bold mb-2">Pengajuan Permohonan</h3>
-                <p>Pemohon pelatihan dapat mengunggah berkas permohonan pelatihan MTU yang sudah dibuat ke laman website PPKDJU dan mengisi data:</p>
-                </div>
-            </template>
-
-            <template x-if="tab === 'survey'">
-                <div>
-                <h3 class="text-xl font-bold mb-2">Survey Lokasi</h3>
-                <p>Survey lokasi dilaksanakan oleh tim PPKD Jakarta Utara untuk memastikan kelayakan lokasi pelatihan MTU dengan mempertimbangkan :</p>
-                </div>
-            </template>
-
-            <template x-if="tab === 'pelatihan'">
-                <div>
-                <h3 class="text-xl font-bold mb-2">Proses Pelatihan</h3>
-                <p>Setelah proses survey dan dinyatakan layak, pelatihaan akan dilaksanakan pada lokasi tersebut diampu oleh instruktur profesional Selama 160, 180, 240 atau 260 Jam Pelatihan (JPL) sesuai dengan program pelatihan yang diikuti secara gratis dan mendapat benefit</p>
-                </div>
-            </template>
+                <template x-if="tab === 'unduh'"><div x-transition>
+                    <h3 class="text-xl font-bold mb-2">Unduh Contoh Surat Permohonan Pelatihan MTU</h3>
+                    <p class="mb-4">Pelatihan MTU merupakan pelatihan yang dilaksanakan di tempat pemohon seperti LMK, Balai RT/RW. Ajukan surat permohonan kolektif minimal 10 peserta.</p>
+                    <a href="#" class="bg-cyan-500 text-white px-4 py-2 rounded">Unduh Surat Permohonan</a>
+                </div></template>
+                <template x-if="tab === 'pengajuan'"><div x-transition>
+                    <h3 class="text-xl font-bold mb-2">Pengajuan Permohonan</h3>
+                    <p>Pemohon pelatihan dapat mengunggah berkas permohonan pelatihan MTU yang sudah dibuat ke laman website PPKDJU dan mengisi data.</p>
+                </div></template>
+                <template x-if="tab === 'survey'"><div x-transition>
+                    <h3 class="text-xl font-bold mb-2">Survey Lokasi</h3>
+                    <p>Survey lokasi dilaksanakan oleh tim PPKD Jakarta Utara untuk memastikan kelayakan lokasi pelatihan MTU dengan mempertimbangkan berbagai aspek teknis dan keamanan.</p>
+                </div></template>
+                <template x-if="tab === 'pelatihan'"><div x-transition>
+                    <h3 class="text-xl font-bold mb-2">Proses Pelatihan</h3>
+                    <p>Setelah proses survey dan dinyatakan layak, pelatihan akan dilaksanakan pada lokasi tersebut diampu oleh instruktur profesional Selama 160, 180, 240 atau 260 Jam Pelatihan (JPL) sesuai dengan program pelatihan yang diikuti secara gratis dan mendapat benefit.</p>
+                </div></template>
             </div>
 
-            <!-- GAMBAR -->
-            <div>
-            <img x-show="tab === 'unduh'" src="https://ppkdju.com/static/img/features-1.jpg" alt="Unduh" class="w-full max-w-auto mx-auto" />
-            <img x-show="tab === 'pengajuan'" src="https://ppkdju.com/static/img/features-2.jpg" alt="Pengajuan" class="w-full max-w-auto mx-auto" />
-            <img x-show="tab === 'survey'" src="https://ppkdju.com/static/img/features-2.svg" alt="Survey" class="w-full max-w-auto mx-auto" />
-            <img x-show="tab === 'pelatihan'" src="https://ppkdju.com/static/img/features-5.svg" alt="Pelatihan" class="w-full max-w-auto mx-auto" />
+            <div class="flex items-center justify-center">
+                <img x-show="tab === 'unduh'" src="https://ppkdju.com/static/img/features-1.jpg" alt="Unduh" class="w-full h-auto max-w-md mx-auto rounded-lg shadow-md" x-transition />
+                <img x-show="tab === 'pengajuan'" src="https://ppkdju.com/static/img/features-2.jpg" alt="Pengajuan" class="w-full h-auto max-w-md mx-auto rounded-lg shadow-md" x-transition />
+                <img x-show="tab === 'survey'" src="https://ppkdju.com/static/img/features-2.svg" alt="Survey" class="w-full h-auto max-w-md mx-auto" x-transition />
+                <img x-show="tab === 'pelatihan'" src="https://ppkdju.com/static/img/features-5.svg" alt="Pelatihan" class="w-full h-auto max-w-md mx-auto" x-transition />
             </div>
         </div>
     </div>
-       
+        
 
-    <!-- TESTIMONI -->
-
-
-    <!-- ALAMAT -->
-    <div class="text-center items-center my-10 pt-10">
+    <div class="text-center items-center my-10 pt-10 px-4" data-aos="fade-up">
         <h1 class="text-5xl mb-4 font-light">ALAMAT</h1>
         <h3>Jalan Gereja Tugu No 20 Semper Barat, Kecamatan Cilincing, Kota Administrasi Jakarta Utara, DKI Jakarta 14130</h3>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.097000570299!2d106.92488897475141!3d-6.118029093869913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1ffb54715367%3A0x8e505825dfebd999!2sPPKD%20Jakarta%20Utara!5e0!3m2!1sen!2sid!4v1721532057390!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full"></iframe>
+    <div data-aos="fade-up" class="">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3967.028619839566!2d106.918383!3d-6.126851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a200f48b528b1%3A0x76f0b97c23e8b33d!2sPPKD%20Jakarta%20Utara!5e0!3m2!1sen!2sid!4v1753321114245!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
-    <?php include('layout/footer.php'); ?>
+    <div data-aos="fade-up">
+        <?php include('layout/footer.php'); ?>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -373,9 +332,9 @@
         AOS.init({
             offset: 120,
             delay: 0,
-            duration: 400,
+            duration: 800, // A slightly faster duration can feel smoother
             easing: 'ease',
-            once: false,
+            once: true, // Animate elements only once for a smoother experience
             mirror: false,
             anchorPlacement: 'top-bottom',
         });
@@ -416,6 +375,31 @@
             });
         });
     </script>
+    <div 
+        x-show="isVideoModalOpen" 
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+        @click.self="isVideoModalOpen = false"
+        style="display: none;"
+    >
+        <div class="relative w-full max-w-4xl p-4">
+            <button @click="isVideoModalOpen = false" class="absolute -top-2 -right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black text-2xl">&times;</button>
+            
+            <div class="relative overflow-hidden rounded-lg shadow-xl" style="padding-top: 56.25%;"> <iframe 
+                    class="absolute top-0 left-0 h-full w-full" 
+                    src="https://www.youtube.com/embed/CR6jfKSeXT4?si=0kJC1VjUQROxAAte" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>

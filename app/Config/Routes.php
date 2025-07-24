@@ -16,6 +16,7 @@ $routes->get('jadwal/tambah', 'jadwal::tambah');
 $routes->post('jadwal/simpan', 'jadwal::simpan');
 $routes->post('jadwal/delete/(:num)', 'jadwal::delete/$1');
 $routes->get('jadwal/edit/(:num)', 'jadwal::edit/$1');
+$routes->post('jadwal/update/(:num)', 'jadwal::update/$1');
 // auth
 $routes->get('auth/login', 'Home::login');
 $routes->get('auth/register', 'Home::register');
@@ -30,4 +31,4 @@ $routes->post('lowongan/delete/(:num)', 'lowongans::delete/$1', ['filter' => 'ro
 $routes->post('lowongan/simpan', 'lowongans::simpan');
 // users
 $routes->get('users', 'admin::users');
-$routes->get('users_profile/(:num)', 'home::users/$1');
+$routes->get('users_profile/(:num)', 'home::users/$1' );

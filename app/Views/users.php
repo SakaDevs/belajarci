@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <?= $this->include('layout/navbar') ?>
 
     <section id="jadwal-pelatihan-section" class="py-12 bg-white  mt-15">
@@ -27,6 +26,7 @@
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Nama</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Role</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Email</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Desc</th>
                         </tr>
                     </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -37,6 +37,7 @@
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $user->username ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $user->name ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap"><?= $user->email ?></td>
+                                <td class="px-6 py-4 whitespace-nowrap"><?= $user->description ?></td>
                             </tr>      
                         <?php endforeach; ?>  
                         </tbody>

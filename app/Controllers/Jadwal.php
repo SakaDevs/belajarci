@@ -48,8 +48,15 @@ class Jadwal extends BaseController
     public function edit($id)
     {
         $jadwalModel = new jadwalModel();
-        $data = $jadwalModel->findAll();
+        $data = $jadwalModel->find($id);
 
         return view('edit_jadwal', compact('data'));
+    }
+    public function update($id)
+    {
+        $jadwalModel = new jadwalModel();
+        $data = $this->request->getPost();
+        $jadwalModel->update($id, $data);
+        return redirect()->to('jadwal')->with('success','');
     }
 }

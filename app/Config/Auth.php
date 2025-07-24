@@ -15,7 +15,7 @@ class Auth extends MythAuthConfig
      *
      * @var string
      */
-    public $defaultUserGroup = "admin";
+    public $defaultUserGroup = "users";
 
     /**
      * --------------------------------------------------------------------

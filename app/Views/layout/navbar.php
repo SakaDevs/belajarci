@@ -248,7 +248,7 @@
 </head>
 <body>
     <!-- NAVBAR -->
-    <header class="fixed top-0 left-0 w-full z-50 fixed-header" id="navbar">
+    <header class="fixed top-0 left-0 w-full z-50" id="navbar">
         <div class="flex justify-between items-center m-6 px-1 md:px-6 navbar-container">
             <!-- Logo -->
             <a href="#" class="flex gap-3 items-center logo-container">
@@ -259,9 +259,9 @@
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul class="flex gap-8 font-light text-center">
-                    <li class="navbarid"><a href="/">Home</a></li>
-                    <li class="navbarid"><a href="#about">Tentang</a></li>
-                    <li class="navbarid"><a href="#layanan">Layanan</a></li>
+                    <li class="navbarid"><a href="<?= base_url('/')?>">Home</a></li>
+                    <li class="navbarid"><a href="<?= base_url('/#about') ?>">Tentang</a></li>
+                    <li class="navbarid"><a href="<?= base_url('/#layanan') ?>">Layanan</a></li>
                     <li class="navbarid"><a href="/lowongan/">Lowongan</a></li>
                     <li class="navbarid"><a href="/jadwal/">Jadwal</a></li>
                     
@@ -295,17 +295,17 @@
 
             <!-- Desktop Start Button -->
             <?php if (logged_in()): ?>
-    <?php $userId = user_id(); ?>
-    <a class="bg-green-500 py-2 px-6 rounded-md text-white hover:bg-green-600 transition desktop-start-btn"
-       href="<?= site_url('users_profile/' . $userId) ?>">
-        My Profile
-    </a>
-<?php else: ?>
-    <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-blue-500 transition desktop-start-btn"
-       href="<?= url_to('login') ?>">
-        Login
-    </a>
-<?php endif; ?>
+                <?php $userId = user_id(); ?>
+                <a class="bg-blue-500 py-2 px-6 rounded-md text-white hover:bg-blue-600 transition desktop-start-btn"
+                href="<?= site_url('users_profile/' . $userId) ?>">
+                    My Profile
+                </a>
+            <?php else: ?>
+                <a class="bg-blue-400 py-2 px-6 rounded-md text-white hover:bg-blue-500 transition desktop-start-btn"
+                href="<?= url_to('login') ?>">
+                    Login
+                </a>
+            <?php endif; ?>
 
 
             <!-- Hamburger Menu -->

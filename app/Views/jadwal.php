@@ -16,63 +16,70 @@
     <?= $this->include('layout/navbar') ?>
 
     <section id="jadwal-pelatihan-section" class="py-12 bg-white  mt-15">
-        <div class="container mx-auto px-4 max-w-screen-xl"> 
+        <div class="w-3/4 px-4 mx-auto"> 
             <h2 class="text-3xl font-light text-center text-gray-800 mb-4">Daftar Jadwal Pelatihan PPKD Jakut</h2>
+            <?php if(in_groups('admin')): ?>
             <div class="text-center my-6">
                 <a href="<?= base_url('jadwal/tambah') ?>" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
                     + Tambah Jadwal
                 </a>
             </div>
-            
-            <div class="overflow-x-auto shadow-lg rounded-lg"> 
-                <table class="min-w-full divide-y divide-gray-200" id="jadwal-table">
-                    <thead class="bg-blue-400 text-white">
+            <?php endif; ?>
+            <div class="shadow-lg rounded-lg overflow-hidden w-full">
+                <table class="w-full divide-y divide-gray-200 text-sm" id="jadwal-table">
+                    <thead class="bg-gray-100 text-gray-900">
                         <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tl-lg">Program Pelatihan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Angkatan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Tutup Pendaftaran</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Seleksi</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Seleksi</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Mulai Pelatihan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Pelatihan</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Awal Uji Kompetensi</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Akhir Uji Kompetensi</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tr-lg">Aksi</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Program Pelatihan</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Angkatan</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Tutup Pendaftaran</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Mulai Seleksi</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Akhir Seleksi</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Mulai Pelatihan</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Akhir Pelatihan</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Awal Uji Kompetensi</th>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Akhir Uji Kompetensi</th>
+                            <?php if(in_groups('admin')): ?>
+                            <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Aksi</th>
+                            <?php endif; ?>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                            <?php foreach($model as $jadwal): ?>
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['nama_program'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= $jadwal['angkatan'] ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['tutup_pendaftaran'])) ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['mulai_seleksi'])) ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['akhir_seleksi'])) ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['mulai_pelatihan']))  ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['akhir_pelatihan']))  ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['awal_kompetensi']))  ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap"><?= date('d M Y', strtotime($jadwal['akhir_kompetensi']))  ?></td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex gap-3">
+                    <tbody class="divide-y divide-gray-200">
+                        <?php foreach($model as $index => $jadwal): ?>
+                        <tr class="<?= $index % 2 === 0 ? 'bg-white' : 'bg-gray-100' ?>">
+                            <td class="px-6 py-4"><?= $jadwal['nama_program'] ?></td>
+                            <td class="px-6 py-4"><?= $jadwal['angkatan'] ?></td>
+                            <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['tutup_pendaftaran'])) ?></td>
+                            <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['mulai_seleksi'])) ?></td>
+                            <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['akhir_seleksi'])) ?></td>
+                            <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['mulai_pelatihan'])) ?></td>
+                            <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['akhir_pelatihan'])) ?></td>
+                            <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['awal_kompetensi'])) ?></td>
+                            <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['akhir_kompetensi'])) ?></td>
+                            <?php if(in_groups('admin')): ?>
+                            <td class="px-6 py-4">
+                                <div class="flex gap-2">
                                     <form action="/jadwal/delete/<?=$jadwal['id']?>" method="post" onsubmit="return confirm('Apakah kamu yakin ingin menghapus jadwal ini?');">
                                         <?= csrf_field() ?>
-                                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-center rounded p-2">
+                                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded text-sm">
                                             Delete
                                         </button>
                                     </form>
-                                    <a href="/jadwal/edit/<?=$jadwal['id']?>" class="bg-green-600 hover:bg-green-700 text-white text-center rounded p-2">
+                                    <a href="/jadwal/edit/<?=$jadwal['id']?>" class="bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded text-sm">
                                         Edit
                                     </a>
                                 </div>
-                                <?php endforeach; ?>
                             </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <?php endif; ?>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
+
         </div>
     </section>
-
+                                
+    <?php include('layout/footer.php') ?>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 

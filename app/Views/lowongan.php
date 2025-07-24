@@ -73,76 +73,62 @@
             flex-grow: 1;
         }
         
-
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
-    <!-- Navbar include would go here -->
     <?= $this->include('layout/navbar') ?>   
     
-    <!-- Jobs Container -->
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8 mt-20">
         <div class="max-w-9xl mx-auto">
-            <!-- Page Title -->
             <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">Available Jobs</h1>
+                <h1 class="text-3xl text-gray-800 font-light mb-4">Lowongan Pekerjaan</h1>
+                
+                <form class="max-w-md mx-auto mb-10" method="get" action="<?= base_url('lowongan/search') ?>">   
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search... " required name="keyword"/>
+                        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                    </div>
+                    <?php if(in_groups('admin')): ?>
+                        <div class="text-center mt-6">
+                            <a href="<?= base_url('lowongan/tambah') ?>" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+                                + Tambah Lowongan
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                </form>
             </div>
-            
- 
-
-    <!-- Search Bar -->
-    <form class="max-w-md mx-auto mb-10" method="get" action="<?= base_url('lowongan/search') ?>">   
-        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                </svg>
-            </div>
-            <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search... " required name="keyword"/>
-            <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-        </div>
-        <?php if(in_groups('admin')): ?>
-            <div class="text-center mt-6">
-                <a href="<?= base_url('lowongan/tambah') ?>" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
-                    + Tambah Lowongan
-                </a>
-            </div>
-        <?php endif; ?>
-    </form>
 
 
-            <!-- Jobs Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 <?php foreach($lowongan as $k => $v): ?>
                 <div class="job-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:border-indigo-200">
-                    <!-- Card Image -->
                     <div class="relative">
                         <img class="w-full h-48 object-cover" 
                              src="<?= base_url('uploads/foto_lowongan/' . $v['gambar_poster'] )?>" 
                              alt="<?= htmlspecialchars($v['gambar_poster']) ?>" />
                     </div>
                     
-                    <!-- Card Content -->
                     <div class="card-content p-6">
                         <div class="card-body">
-                            <!-- Job Status -->
                             <div class="flex items-center mb-3">
                                 <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                                 <span class="text-sm text-green-600 font-medium">Available</span>
                             </div>
                             
-                            <!-- Job Title -->
                             <h3 class="text-lg font-bold text-gray-900 line-clamp-2 min-h-[3.5rem]">
                                 <?= htmlspecialchars($v['judul_lowongan']) ?>
                             </h3>
                             
-                            <!-- Job Description -->
                             <p class="text-gray-600 mb-2 text-sm leading-relaxed min-h-[4.5rem]"> 
                                 <?= htmlspecialchars($v['detail_lengkap']) ?>
                             </p>
                             
-                            <!-- Company Info -->
                             <div class="flex items-center mb-6">
                                 <div class="flex items-center text-gray-500">
                                     <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,7 +139,6 @@
                             </div>
                         </div>
                         
-                        <!-- Detail Button -->
                         <div class="mt-auto">
                             <a href="/lowongan/detail/<?= $v['id'] ?>" 
                                class="btn-primary w-full text-white font-medium py-3 rounded-2xl text-center">
@@ -187,7 +172,6 @@
                 <?php endforeach; ?>
             </div>
             
-            <!-- Empty State (if no jobs) -->
             <?php if(empty($lowongan)): ?>
             <div class="text-center py-16">
                 <svg class="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,5 +183,6 @@
             <?php endif; ?>
         </div>
     </div>
+    <?php include('layout/footer.php') ?>
 </body>
 </html>

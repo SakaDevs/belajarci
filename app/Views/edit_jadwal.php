@@ -35,16 +35,15 @@
                 </ul>
             </div>
         <?php endif; ?>
-        <?php foreach($data as $low => $lowongan ):?>
-        <form action="<?= base_url('jadwal/simpan' . $lowongan['id']) ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('jadwal/update/' . $data['id']) ?>" method="post" enctype="multipart/form-data">
              <div class="mb-4">
                 <label class="block font-medium text-gray-700">Judul Jadwal</label>
-                <input type="text" name="nama_program" class="w-full p-3 border border-gray-300 rounded-xl" value="<?= $lowongan['nama_program'] ?>" required>
+                <input type="text" name="nama_program" class="w-full p-3 border border-gray-300 rounded-xl" value="<?= $data['nama_program']?>" required>
             </div>
         
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Angkatan</label>
-                <input type="number" min="1" max="5" name="angkatan" class="w-full p-3 border border-gray-300 rounded-xl" required>
+                <input type="number" min="1" max="5" name="angkatan" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?$data['angkatan']?>">
             </div>
 
             <div class="mb-4">
@@ -87,7 +86,6 @@
                 <a href="<?= base_url('jadwal') ?>" class="text-gray-600 hover:underline self-center">Batal</a>
             </div>
         </form>
-        <?php endforeach;?>
     </div>
 </body>
 </html>
