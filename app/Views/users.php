@@ -27,6 +27,7 @@
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Role</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Email</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Desc</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Aksi</th>
                         </tr>
                     </thead>
                         <tbody class="bg-white divide-y divide-gray-200">

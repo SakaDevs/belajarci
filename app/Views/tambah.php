@@ -35,7 +35,6 @@
                 </ul>
             </div>
         <?php endif; ?>
-
         <form action="<?= base_url('lowongan/simpan') ?>" method="post" enctype="multipart/form-data">
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Judul Lowongan</label>

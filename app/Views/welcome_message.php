@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/css/welcome.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body x-data="{ isVideoModalOpen: false }" @keydown.escape.window="isVideoModalOpen: false">
@@ -328,6 +327,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         AOS.init({
             offset: 120,
@@ -388,7 +388,7 @@
         style="display: none;"
     >
         <div class="relative w-full max-w-4xl p-4">
-            <button @click="isVideoModalOpen = false" class="absolute -top-2 -right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-black text-2xl">&times;</button>
+            <button @click="isVideoModalOpen = false" class="absolute -top-2 -right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full cursor-pointer bg-white text-black text-2xl">&times;</button>
             
             <div class="relative overflow-hidden rounded-lg shadow-xl" style="padding-top: 56.25%;"> <iframe 
                     class="absolute top-0 left-0 h-full w-full" 
