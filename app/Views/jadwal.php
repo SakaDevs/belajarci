@@ -15,8 +15,8 @@
     
     <?= $this->include('layout/navbar') ?>
 
-    <section id="jadwal-pelatihan-section" class="py-12 bg-white  mt-15">
-        <div class="w-3/4 px-4 mx-auto"> 
+    <section id="jadwal-pelatihan-section" class="py-12 bg-white  mt-15" >
+        <div class="w-3/4 px-4 mx-auto" data-aos="fade-up" data-aos-duration="1000"> 
             <h2 class="text-3xl font-light text-center text-gray-800 mb-4">Daftar Jadwal Pelatihan PPKD Jakut</h2>
             <?php if(in_groups('admin')): ?>
             <div class="text-center my-6">
@@ -38,7 +38,7 @@
                             <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Akhir Pelatihan</th>
                             <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Awal Uji Kompetensi</th>
                             <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Akhir Uji Kompetensi</th>
-                            <?php if(in_groups('admin')): ?>
+                            <?php if(in_groups(['admin', 'Super'])): ?>
                             <th class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider">Aksi</th>
                             <?php endif; ?>
                         </tr>
@@ -55,7 +55,7 @@
                             <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['akhir_pelatihan'])) ?></td>
                             <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['awal_kompetensi'])) ?></td>
                             <td class="px-6 py-4"><?= date('d M Y', strtotime($jadwal['akhir_kompetensi'])) ?></td>
-                            <?php if(in_groups('admin')): ?>
+                            <?php if(in_groups(['admin', 'Super'])): ?>
                             <td class="px-6 py-4">
                                 <div class="flex gap-2">
                                     <form action="/jadwal/delete/<?=$jadwal['id']?>" method="post" onsubmit="return confirm('Apakah kamu yakin ingin menghapus jadwal ini?');">

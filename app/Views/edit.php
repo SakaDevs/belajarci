@@ -37,7 +37,7 @@
             </div>
         <?php endif; ?>
         <?php foreach($data as $lowongan):?>
-        <form action="<?= base_url('jadwal/edit/' . $lowongan['id']) ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('lowongan/update/' . $lowongan['id']) ?>" method="post" enctype="multipart/form-data">
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Judul Lowongan</label>
                 <input type="text" name="judul_lowongan" class="w-full p-3 border border-gray-300 rounded-xl" value="<?= $lowongan['judul_lowongan']?>" required>

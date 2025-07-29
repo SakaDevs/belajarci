@@ -287,7 +287,7 @@
                             <li><a href="#">Kolaborasi Pelatihan</a></li>
                         </ul>
                     </li>
-                    <?php if(in_groups('admin')): ?>
+                    <?php if(in_groups('Super')): ?>
                     <li><a href="/users">Users</a></li>
                     <?php endif; ?>
                 </ul>

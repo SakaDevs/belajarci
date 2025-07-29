@@ -78,7 +78,7 @@
 <body class="bg-gray-50 min-h-screen">
     <?= $this->include('layout/navbar') ?>   
     
-    <div class="container mx-auto px-4 py-8 mt-20">
+    <div class="container mx-auto px-4 py-8 mt-20" data-aos="fade-up" data-aos-duration="1000">
         <div class="max-w-9xl mx-auto">
             <div class="text-center mb-12">
                 <h1 class="text-3xl text-gray-800 font-light mb-4">Lowongan Pekerjaan</h1>
@@ -94,7 +94,7 @@
                         <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search... " required name="keyword"/>
                         <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                     </div>
-                    <?php if(in_groups('admin')): ?>
+                    <?php if(in_groups(['admin', 'Super'])): ?>
                         <div class="text-center mt-6">
                             <a href="<?= base_url('lowongan/tambah') ?>" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
                                 + Tambah Lowongan
@@ -149,7 +149,7 @@
                                     </svg>
                                 </span>
                             </a>
-                            <?php if(in_groups('admin')): ?>
+                            <?php if(in_groups(['admin', 'Super'])): ?>
                             <div class="flex items-center gap-5 justify-center">
                                 <div class="text-center mt-4">
                                     <a href="/lowongan/edit/<?= $v['id']?>" class="bg-green-600 hover:bg-green-700 text-white text-center rounded p-2">
@@ -184,5 +184,17 @@
         </div>
     </div>
     <?php include('layout/footer.php') ?>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
+    </script>
 </body>
 </html>

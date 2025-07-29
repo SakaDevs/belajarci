@@ -1,20 +1,14 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Models\CustomUserModel;
 use App\Models\LowonganModel;
 class Home extends BaseController
 {
     public function index(): string
     {
         return view('welcome_message');
-    }
-    public function about(): string
-    {   
-        return view('about');
-    }
-    public function layanan(): string
-    {
-        return view('company_profile');
     }
     public function jadwal(): string
     {
@@ -30,5 +24,19 @@ class Home extends BaseController
         $users = new \Myth\Auth\Models\UserModel();
         $detail = $users->where('id', $id)->first();
         return view('users_profile', compact('detail'));
+    }
+    public function saveUser($id)
+    {
+        $user = new \Myth\Auth\Models\UserModel();
+        $data = $this->request->getPost();
+        
+        $foto = $this ->request->getFile('user_image');
+        if ($foto && $foto->isValid() && !$foto->hasMoved()) {
+            $newname = $foto->getRandomName();
+            $foto->move('uploads/foto_profile/', $newname);
+            $data['user_image'] = $newname;
+        }
+        $user->update($id, $data);
+        return redirect()->to('users_profile/' .$id)->with('success', 'Berhasil');
     }
 }

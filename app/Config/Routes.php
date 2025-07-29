@@ -24,11 +24,17 @@ $routes->get('auth/register', 'Home::register');
 $routes->get('lowongan', 'Home::lowongan');
 $routes->get('lowongan/detail/(:num)', 'lowongans::findbyid/$1');
 $routes->get('lowongan/search', 'lowongans::search');
-$routes->get('lowongan/tambah', 'lowongans::tambah', ['filter' => 'role:admin']);
-$routes->get('lowongan/edit/(:num)', 'lowongans::edit/$1', ['filter' => 'role:admin']);
-$routes->post('lowongan/update/(:num)', 'lowongans::update/$1', ['filter' => 'role:admin']);
-$routes->post('lowongan/delete/(:num)', 'lowongans::delete/$1', ['filter' => 'role:admin']);
-$routes->post('lowongan/simpan', 'lowongans::simpan');
+$routes->get('lowongan/tambah', 'lowongans::tambah', ['filter' => 'role:admin, Super']);
+$routes->get('lowongan/edit/(:num)', 'lowongans::edit/$1', ['filter' => 'role:admin, Super']);
+$routes->post('lowongan/update/(:num)', 'lowongans::update/$1', ['filter' => 'role:admin, Super']);
+$routes->post('lowongan/delete/(:num)', 'lowongans::delete/$1', ['filter' => 'role:admin,Super']);
+$routes->post('lowongan/simpan', 'lowongans::simpan', ['filter' => 'role:admin, Super']);
 // users
-$routes->get('users', 'admin::users');
+$routes->get('users', 'admin::users', ['filter' => 'role:Super']);
+$routes->post('users/update/(:num)', 'home::saveUser/$1');
 $routes->get('users_profile/(:num)', 'home::users/$1' );
+$routes->get('users_profile/edit/(:num)', 'admin::edit/$1' );
+
+// admin
+$routes->post('admin/change/(:num)','admin::change/$1', ['filter'=>'role:admin, Super']);
+$routes->get('users/search','admin::search', ['filter' => 'role:admin, Super']);

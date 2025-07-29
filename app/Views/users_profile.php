@@ -207,13 +207,13 @@
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                         </div>
-                        <h2 class="text-2xl font-bold text-gray-900">Personal Information</h2>
+                        <h2 class="text-2xl font-bold text-gray-900">Profile Kamu</h2>
                     </div>
 
                     <div class="space-y-6">
                         <div class="info-card bg-gray-50 rounded-2xl p-4">
                             <label class="block text-sm font-medium text-gray-500 mb-1">Full Name</label>
-                            <p class="text-lg font-semibold text-gray-900"><?= $detail->username ?></p>
+                            <p class="text-lg font-semibold text-gray-900"><?= $detail->full_name ?? 'Not Spesicifed' ?></p>
                         </div>
 
                         <div class="info-card bg-gray-50 rounded-2xl p-4">
@@ -232,7 +232,16 @@
                         </div>
 
                         <!-- Tombol Logout -->
-                        <div class="flex justify-end pt-6">
+                        <div class="flex justify-end pt-6 space-x-5">
+                                <a href="<?= base_url('users_profile/edit/' . $detail->id) ?>" 
+                                    class="btn-primary px-6 py-3 text-white font-medium rounded-2xl flex items-center">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11 5h2m-1-1v2m-7 7h14M5 13V7a2 2 0 012-2h10a2 2 0 012 2v6" />
+                                        </svg>
+                                        Edit Profile
+                                </a>
+
                             <form action="/logout" method="get">
                                 <?= csrf_field() ?>
                                 <button type="submit" class="btn-secondary px-6 py-3 text-white font-medium rounded-2xl flex items-center">
