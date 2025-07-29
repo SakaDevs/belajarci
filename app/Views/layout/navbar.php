@@ -296,6 +296,11 @@
             <!-- Desktop Start Button -->
             <?php if (logged_in()): ?>
                 <?php $userId = user_id(); ?>
+                <?php if (session()->has('id')): ?>
+                <?php $detailUser = session('navbar'); ?>
+                <img src="<?= base_url('uploads/foto_profile' . $detailUser)?>" alt="">
+            <?php endif; ?>
+                
                 <a class="bg-blue-500 py-2 px-6 rounded-md text-white hover:bg-blue-600 transition desktop-start-btn"
                 href="<?= site_url('users_profile/' . $userId) ?>">
                     My Profile
