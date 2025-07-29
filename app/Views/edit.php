@@ -45,7 +45,7 @@
 
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Detail Lengkap</label>
-                <textarea name="detail_lengkap" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required><?= old('detail_lengkap') ?></textarea>
+                <textarea name="detail_lengkap" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required><?= old('detail_lengkap') ?><?=$lowongan['detail_lengkap ']?></textarea>
             </div>
             
             <div class="mb-4">

@@ -19,7 +19,7 @@
         </script>
     <?php endif; ?>
     <section id="jadwal-pelatihan-section" class="py-12 bg-white  mt-15">
-        <div class="container mx-auto px-4 max-w-screen-xl"> 
+        <div class="container mx-auto px-4 max-w-screen-xl" data-aos="fade-up" data-aos-duration="1000"> 
             <h2 class="text-3xl font-light text-center text-gray-800 mb-8">Users Details</h2>
             <form class="max-w-md mx-auto mb-10" method="get" action="<?= base_url('users/search') ?>">   
                     <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
