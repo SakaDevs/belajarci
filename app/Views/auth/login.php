@@ -53,6 +53,17 @@
                 <input type="password" id="password" name="password" required class="form-input" placeholder="<?=lang('Auth.password')?>">
             </div>
             
+            <div class="flex items-center justify-between">
+                <label class="flex items-center">
+                    <input type="checkbox" name="remember" class="h-4 w-4 text-blue-500 border-gray-300 rounded">
+                    <span class="ml-2 text-sm text-gray-700"><?=lang('Auth.rememberMe')?></span>
+                </label>
+
+                <a href="<?= url_to('forgot') ?>" class="text-sm text-blue-400 hover:underline">
+                    <?=lang('Auth.forgotYourPassword')?>
+                </a>
+            </div>
+                                
             <button type="submit" class="w-full bg-blue-400 text-white py-3 px-4 rounded-md hover:bg-blue-500 transition focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 font-semibold text-lg">
                 <?=lang('Auth.loginAction')?>
             </button>

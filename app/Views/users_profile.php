@@ -145,18 +145,12 @@
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen relative">
-    <!-- Floating Background Elements -->
-    <div class="floating-elements">
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-        <div class="floating-circle"></div>
-    </div>
     
     <!-- Navbar include would go here -->
     <?= $this->include('layout/navbar') ?>   
     
     <!-- Profile Container -->
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8" data-aos="fade-up" data-aos-duration="1000">
         <div class="max-w-4xl mx-auto">
             <!-- Profile Header Card -->
             <div class="profile-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 mb-8">
@@ -200,13 +194,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Personal Information -->
                 <div class="section-card bg-white rounded-3xl shadow-lg p-8 border border-gray-100 md:col-span-2">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                        </div>
+                    <div class="flex items-center ml-2 m-6">
                         <h2 class="text-2xl font-bold text-gray-900">Profile Kamu</h2>
                     </div>
 
@@ -258,5 +246,17 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
+    </script>
 </body>
 </html>
