@@ -22,7 +22,6 @@
     </style>
 </head>
 
-
 <?php include('layout/navbar.php') ?>
 <body class="bg-gray-50 min-h-screen py-10 px-4">
     <div class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100 justify-center mt-20">

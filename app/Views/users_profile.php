@@ -171,7 +171,7 @@
                     <div class="absolute -top-16 left-8">
                         <div class="profile-avatar relative">
                             <img class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover" 
-                                 src="<?= $detail->user_image?>" 
+                                 src="<?= base_url('uploads/foto_profile/' . $detail->user_image)?>" 
                                  alt="Profile Picture" />
                             <!-- Online Status Indicator -->
                             <div class="absolute bottom-2 right-2 w-6 h-6 bg-green-500 border-2 border-white rounded-full"></div>
@@ -228,11 +228,11 @@
 
                         <div class="info-card bg-gray-50 rounded-2xl p-4">
                             <label class="block text-sm font-medium text-gray-500 mb-1">Phone Number</label>
-                            <p class="text-lg font-semibold text-gray-900"><?= htmlspecialchars($user['phone'] ?? 'Not specified') ?></p>
+                            <p class="text-lg font-semibold text-gray-900"><?= htmlspecialchars($detail->phone_number ?? 'Not specified') ?></p>
                         </div>
 
                         <!-- Tombol Logout -->
-                        <div class="flex justify-end pt-6 space-x-5">
+                        <div class="flex justify-end pt-6 space-x-4">
                                 <a href="<?= base_url('users_profile/edit/' . $detail->id) ?>" 
                                     class="btn-primary px-6 py-3 text-white font-medium rounded-2xl flex items-center">
                                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

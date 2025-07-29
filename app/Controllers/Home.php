@@ -36,6 +36,7 @@ class Home extends BaseController
             $foto->move('uploads/foto_profile/', $newname);
             $data['user_image'] = $newname;
         }
+        $user->skipValidation(true);
         $user->update($id, $data);
         return redirect()->to('users_profile/' .$id)->with('success', 'Berhasil');
     }

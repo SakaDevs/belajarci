@@ -251,7 +251,7 @@
     <header class="fixed top-0 left-0 w-full z-50" id="navbar">
         <div class="flex justify-between items-center m-6 px-1 md:px-6 navbar-container">
             <!-- Logo -->
-            <a href="#" class="flex gap-3 items-center logo-container">
+            <a href="<?= base_url('/')?>" class="flex gap-3 items-center logo-container">
                 <img src="https://ppkdju.com/static/img/logo.png" alt="" class="h-10" >
                 <h1 class="logo-text font-extralight">PPKD Jakut</h1>
             </a>
