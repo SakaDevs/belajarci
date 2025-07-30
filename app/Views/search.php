@@ -114,7 +114,7 @@
                     <!-- Card Image -->
                     <div class="relative">
                         <img class="w-full h-48 object-cover"
-                             src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                             src="<?= base_url('uploads/foto_lowongan/' . $data['gambar_poster'])?>"
                              alt="<?= htmlspecialchars($data['judul_lowongan']) ?>"/>
                     </div>
 

@@ -70,7 +70,7 @@
         }
     </style>
 </head>
-<body class= min-h-screen">
+<body>
     <!-- Navbar include -->
     <?= $this->include('layout/navbar') ?>
 
@@ -88,10 +88,6 @@
                             No Image Available
                         </div>
                     <?php endif; ?>
-                    <!-- Optional: Company Logo Overlay -->
-                    <!-- <div class="absolute bottom-4 left-4 bg-white p-2 rounded-lg shadow-md">
-                        <img src="https://placehold.co/60x60/FFFFFF/000?text=Logo" alt="Company Logo" class="w-12 h-12 rounded-full">
-                    </div> -->
                 </div>
 
                 <!-- Job Details Content -->

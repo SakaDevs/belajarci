@@ -106,71 +106,71 @@
 
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <?php foreach($lowongan as $k => $v): ?>
-                <div class="job-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:border-indigo-200">
-                    <div class="relative">
-                        <img class="w-full h-48 object-cover" 
-                             src="<?= base_url('uploads/foto_lowongan/' . $v['gambar_poster'] )?>" 
-                             alt="<?= htmlspecialchars($v['gambar_poster']) ?>" />
-                    </div>
-                    
-                    <div class="card-content p-6">
-                        <div class="card-body">
-                            <div class="flex items-center mb-3">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                                <span class="text-sm text-green-600 font-medium">Available</span>
-                            </div>
-                            
-                            <h3 class="text-lg font-bold text-gray-900 line-clamp-2 min-h-[3.5rem]">
-                                <?= htmlspecialchars($v['judul_lowongan']) ?>
-                            </h3>
-                            
-                            <p class="text-gray-600 mb-2 text-sm leading-relaxed min-h-[4.5rem]"> 
-                                <?= htmlspecialchars($v['detail_lengkap']) ?>
-                            </p>
-                            
-                            <div class="flex items-center mb-6">
-                                <div class="flex items-center text-gray-500">
-                                    <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                    </svg>
-                                    <span class="text-sm truncate"><?= htmlspecialchars($v['nama_perusahaan']) ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto">
-                            <a href="/lowongan/detail/<?= $v['id'] ?>" 
-                               class="btn-primary w-full text-white font-medium py-3 rounded-2xl text-center">
-                                <span class="flex items-center justify-center">
-                                    View Details
-                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                    </svg>
-                                </span>
-                            </a>
-                            <?php if(in_groups(['admin', 'Super'])): ?>
-                            <div class="flex items-center gap-5 justify-center">
-                                <div class="text-center mt-4">
-                                    <a href="/lowongan/edit/<?= $v['id']?>" class="bg-green-600 hover:bg-green-700 text-white text-center rounded p-2">
-                                        Edit
-                                    </a>
-                                </div>
-                                <div class="text-center mt-4">
-                                    <form action="/lowongan/delete/<?= $v['id'] ?>" method="post" onsubmit="return confirm('Apakah kamu yakin ingin menghapus lowongan ini?');">
-                                        <?= csrf_field() ?>
-                                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-center rounded p-2">
-                                            Delete
-                                        </button>
-                                    </form>
-                                </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
+
+    <?php foreach($lowongan as $k => $v): ?>
+    <div class="job-card bg-white rounded-3xl shadow-lg overflow-hidden border border-gray-100 hover:border-indigo-200 flex flex-col">
+        
+        <div class="relative">
+            <img class="w-full h-48 object-cover" 
+                 src="<?= base_url('uploads/foto_lowongan/' . $v['gambar_poster']) ?>" 
+                 alt="<?= htmlspecialchars($v['gambar_poster']) ?>" />
+        </div>
+        
+        <div class="card-content p-6 flex flex-col flex-grow">
+            <div class="card-body flex-grow">
+                <div class="flex items-center mb-3">
+                    <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    <span class="text-sm text-green-600 font-medium">Available</span>
+                </div>
+                
+                <h3 class="text-lg font-bold text-gray-900 line-clamp-2 min-h-[3.5rem]">
+                    <?= htmlspecialchars($v['judul_lowongan']) ?>
+                </h3>
+                
+                <p class="text-gray-600 mb-2 text-sm leading-relaxed min-h-[4.5rem]"> 
+                    <?= htmlspecialchars($v['detail_lengkap']) ?>
+                </p>
+                
+                <div class="flex items-center mb-6">
+                    <div class="flex items-center text-gray-500">
+                        <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                        <span class="text-sm truncate"><?= htmlspecialchars($v['nama_perusahaan']) ?></span>
                     </div>
                 </div>
-                <?php endforeach; ?>
             </div>
+            
+            <div class="mt-auto">
+                <a href="/lowongan/detail/<?= $v['id'] ?>" 
+                   class="btn-primary w-full text-white font-medium py-3 rounded-2xl text-center">
+                    <span class="flex items-center justify-center">
+                        View Details
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </span>
+                </a>
+                
+                <?php if(in_groups(['admin', 'Super'])): ?>
+                <div class="flex items-center gap-5 justify-center mt-4">
+                    <a href="/lowongan/edit/<?= $v['id']?>" class="bg-green-600 hover:bg-green-700 text-white text-center rounded px-4 py-2 text-sm">
+                        Edit
+                    </a>
+                    <form action="/lowongan/delete/<?= $v['id'] ?>" method="post" onsubmit="return confirm('Apakah kamu yakin ingin menghapus lowongan ini?');">
+                        <?= csrf_field() ?>
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white text-center rounded px-4 py-2 text-sm">
+                            Delete
+                        </button>
+                    </form>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+
+</div>
             
             <?php if(empty($lowongan)): ?>
             <div class="text-center py-16">
