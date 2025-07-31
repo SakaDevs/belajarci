@@ -16,6 +16,7 @@ class Lowongans extends BaseController
     public function findbyid($id): string
     {
         $detail = $this->lowonganModel->where('id', $id)->first();
+        
         return view('detail', compact('detail'));
     }
     public function search()

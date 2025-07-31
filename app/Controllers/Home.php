@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\CustomUserModel;
 use App\Models\LowonganModel;
+use Config\Pager;
 class Home extends BaseController
 {
     public function index(): string
@@ -15,9 +16,12 @@ class Home extends BaseController
         return view('jadwal');
     }
     public function lowongan(): string{
-        $lowongan = (new LowonganModel())->findAll();
-  
-        return view('lowongan', compact('lowongan'));
+        $lowongan = new LowonganModel();
+        $data = [
+            'lowongan' => $lowongan->asArray()->paginate(8, 'group1'),
+            'pager' => $lowongan->pager,
+        ];
+        return view('lowongan', $data);
     }
     public function users($id)
     {
