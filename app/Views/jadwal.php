@@ -18,7 +18,7 @@
     <section id="jadwal-pelatihan-section" class="py-12 bg-white  mt-15" >
         <div class="w-3/4 px-4 mx-auto" data-aos="fade-up" data-aos-duration="1000"> 
             <h2 class="text-3xl font-light text-center text-gray-800 mb-4">Daftar Jadwal Pelatihan PPKD Jakut</h2>
-            <?php if(in_groups('admin')): ?>
+            <?php if(in_groups(['admin','Super'])): ?>
             <div class="text-center my-6">
                 <a href="<?= base_url('jadwal/tambah') ?>" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
                     + Tambah Jadwal

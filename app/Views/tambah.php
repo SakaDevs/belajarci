@@ -23,7 +23,7 @@
 </head>
 <?php include('layout/navbar.php') ?>
 <body class="bg-gray-50 min-h-screen py-10 px-4">
-    <div class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100 justify-center mt-20">
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100 justify-center mt-20" data-aos="fade-up" duration="3000">
         <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Tambah Lowongan Baru</h2>
 
         <?php if (session()->getFlashdata('errors')): ?>
@@ -67,5 +67,17 @@
             </div>
         </form>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120,
+            delay: 0,
+            duration: 400,
+            easing: 'ease',
+            once: false,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
+    </script>
 </body>
 </html>
