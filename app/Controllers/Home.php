@@ -27,6 +27,10 @@ class Home extends BaseController
     {
         $users = new \Myth\Auth\Models\UserModel();
         $detail = $users->where('id', $id)->first();
+        if ($id != user_id() && !in_groups(['admin', 'Super'])) {
+            return redirect()->to('/')->with('error', 'Akses ditolak!');
+        }
+           
         return view('users_profile', compact('detail'));
     }
     public function saveUser($id)

@@ -13,13 +13,12 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Custom CSS from your previous code */
         .job-card {
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px); /* This might not be visible on solid backgrounds */
+            backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
-            height: 100%; /* Ensure it fills parent height in grid */
+            height: 100%; 
         }
         .job-card:hover {
             transform: translateY(-8px);
@@ -64,9 +63,9 @@
         .card-body {
             flex-grow: 1;
         }
-        /* Styling for fixed navbar padding */
+
         .pt-fixed-navbar {
-            padding-top: 90px; /* Adjust this value to match your fixed navbar height */
+            padding-top: 90px; 
         }
     </style>
 </head>

@@ -43,42 +43,42 @@
         
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Angkatan</label>
-                <input type="number" min="1" max="5" name="angkatan" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?$data['angkatan']?>">
+                <input type="number" min="1" max="5" name="angkatan" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?=$data['angkatan']?>">
             </div>
 
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Tutup Pendaftaran</label>
-                <input type="date" name="tutup_pendaftaran" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required></input type="date">
+                <input type="date" name="tutup_pendaftaran" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?=$data['tutup_pendaftaran']?>"></input type="date">
             </div>
             
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Mulai Seleksi</label>
-                <input type="date" name="mulai_seleksi" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required></input type="date">
+                <input type="date" name="mulai_seleksi" rows="5" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?=$data['mulai_seleksi']?>"></input type="date">
             </div>
 
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Akhir Seleksi</label>
-                <input type="date" name="akhir_seleksi" class="w-full p-3 border border-gray-300 rounded-xl"  required>
+                <input type="date" name="akhir_seleksi" class="w-full p-3 border border-gray-300 rounded-xl"  required value="<?=$data['akhir_seleksi']?>">
             </div>
             
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Mulai Pelatihan</label>
-                <input type="date" name="mulai_pelatihan" class="w-full p-3 border border-gray-300 rounded-xl" required>
+                <input type="date" name="mulai_pelatihan" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?=$data['mulai_pelatihan']?>">
             </div>
 
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Akhir Pelatihan</label>
-                <input type="date" name="akhir_pelatihan" class="w-full p-3 border border-gray-300 rounded-xl" required>
+                <input type="date" name="akhir_pelatihan" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?=$data['akhir_pelatihan']?>">
             </div>
 
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Awal Uji Kompetensi</label>
-                <input type="date" name="awal_kompetensi" class="w-full p-3 border border-gray-300 rounded-xl" required>
+                <input type="date" name="awal_kompetensi" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?=$data['awal_kompetensi']?>">
             </div>
 
             <div class="mb-4">
                 <label class="block font-medium text-gray-700">Akhir Uji Kompetensi</label>
-                <input type="date" name="akhir_kompetensi" class="w-full p-3 border border-gray-300 rounded-xl" required>
+                <input type="date" name="akhir_kompetensi" class="w-full p-3 border border-gray-300 rounded-xl" required value="<?=$data['akhir_kompetensi']?>">
             </div>
 
             <div class="flex justify-between">

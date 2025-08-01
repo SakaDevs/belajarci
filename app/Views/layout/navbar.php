@@ -293,7 +293,6 @@
                 </ul>
             </nav>
 
-            <!-- Desktop Start Button -->
             <?php if (logged_in()): ?>
                 <?php $userId = user_id(); ?>
                 <?php if (session()->has('id')): ?>

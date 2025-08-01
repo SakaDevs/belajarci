@@ -13,6 +13,7 @@ $routes->get('profile', 'Home::profile');
 // jadwal
 $routes->get('jadwal', 'jadwal::index');
 $routes->get('jadwal/tambah', 'jadwal::tambah');
+$routes->get('jadwal/search', 'jadwal::search');
 $routes->post('jadwal/simpan', 'jadwal::simpan');
 $routes->post('jadwal/delete/(:num)', 'jadwal::delete/$1');
 $routes->get('jadwal/edit/(:num)', 'jadwal::edit/$1');
@@ -31,9 +32,9 @@ $routes->post('lowongan/delete/(:num)', 'lowongans::delete/$1', ['filter' => 'ro
 $routes->post('lowongan/simpan', 'lowongans::simpan', ['filter' => 'role:admin, Super']);
 // users
 $routes->get('users', 'admin::users', ['filter' => 'role:Super']);
-$routes->post('users/update/(:num)', 'home::saveUser/$1');
-$routes->get('users_profile/(:num)', 'home::users/$1' );
-$routes->get('users_profile/edit/(:num)', 'admin::edit/$1' );
+$routes->post('users/update/(:num)', 'home::saveUser/$1' , ['filter' => 'role:users, Super, admin']);
+$routes->get('users_profile/(:num)', 'home::users/$1', ['filter' => 'role:users, Super, admin'] );
+$routes->get('users_profile/edit/(:num)', 'admin::edit/$1', ['filter' => 'role:users, Super, admin']);
 
 // admin
 $routes->post('admin/change/(:num)','admin::change/$1', ['filter'=>'role:admin, Super']);

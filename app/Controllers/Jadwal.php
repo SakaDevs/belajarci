@@ -10,8 +10,8 @@ class Jadwal extends BaseController
 {
     public function index()
     {
-        $model = (new JadwalModel())->findAll();
-        return view("jadwal", compact("model"));
+        $jadwal = (new JadwalModel())->findAll();
+        return view("jadwal", compact("jadwal"));
     }
     public function delete($id)
     {
@@ -58,5 +58,21 @@ class Jadwal extends BaseController
         $data = $this->request->getPost();
         $jadwalModel->update($id, $data);
         return redirect()->to('jadwal')->with('success','');
+    }
+
+    public function search()
+    {
+        $keyword = $this->request->getGet('keyword');
+        $jadwalModel = new jadwalModel();
+
+        if ($keyword) {
+            $jadwal = $jadwalModel
+            ->like('nama_program', $keyword, 'both')
+            ->orlike('angkatan', $keyword, 'both')
+            ->findAll();
+        } else {
+            $jadwal = $jadwalModel->findAll(); 
+        }
+        return view('jadwal', ['jadwal'=>$jadwal]);
     }
 }

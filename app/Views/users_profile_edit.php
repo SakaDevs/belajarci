@@ -65,7 +65,7 @@
 
             <div class="flex justify-between">
                 <button type="submit" class="btn-primary text-white px-6 py-3 rounded-2xl font-medium">Simpan</button>
-                <a href="" class="text-gray-600 hover:underline self-center">Batal</a>
+                <a href="<?= base_url('users_profile/' . $detail->id)?>" class="text-gray-600 hover:underline self-center">Batal</a>
             </div>
         </form>
     </div>

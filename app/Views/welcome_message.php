@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/css/welcome.css">
 </head>
 
 <body x-data="{ isVideoModalOpen: false }" @keydown.escape.window="isVideoModalOpen: false">
@@ -21,7 +20,7 @@
         <h1 class="mt-8 text-3xl font-light sm:text-4xl mdx:text-cyan-400" data-aos="fade-up" data-aos-delay="200">Selamat datang <span class="text-cyan-300 font-light">Jaknaker</span></h1>
         <h1 class="mt-4 text-lg font-light sm:text-xl" data-aos="fade-up" data-aos-delay="400">Tingkatkan kompetensi mu untuk raih karir yang kamu inginkan, <strong>GRATIS!</strong></h1>
         <div class="mt-8 flex w-full max-w-xs flex-col items-center gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:gap-2" data-aos="fade-up" data-aos-delay="600">
-            <a class="w-full rounded-md bg-blue-400 py-2 px-6 text-white transition hover:bg-[#81beffff] sm:w-auto" href="/#services">Mulai</a>
+            <a class="w-full rounded-md bg-blue-400 py-2 px-6 text-white transition hover:bg-[#81beffff] sm:w-auto" href="login">Mulai</a>
             <div class="playbutton w-full sm:w-auto">
                 <a href="#" @click.prevent="isVideoModalOpen = true" class="flex w-full items-center justify-center gap-2 rounded-md py-2 px-6 text-blue-400 transition hover:text-[#81beffff] sm:w-auto">
                     <i class="bi bi-play-circle text-2xl"></i>

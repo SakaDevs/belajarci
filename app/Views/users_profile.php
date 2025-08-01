@@ -164,11 +164,9 @@
                     <!-- Profile Avatar -->
                     <div class="absolute -top-16 left-8">
                         <div class="profile-avatar relative">
-                            <img class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover" 
+                            <img class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-fill" 
                                  src="<?= base_url('uploads/foto_profile/' . $detail->user_image)?>" 
                                  alt="Profile Picture" />
-                            <!-- Online Status Indicator -->
-                            <div class="absolute bottom-2 right-2 w-6 h-6 bg-green-500 border-2 border-white rounded-full"></div>
                         </div>
                     </div>
                     
@@ -201,7 +199,7 @@
                     <div class="space-y-6">
                         <div class="info-card bg-gray-50 rounded-2xl p-4">
                             <label class="block text-sm font-medium text-gray-500 mb-1">Full Name</label>
-                            <p class="text-lg font-semibold text-gray-900"><?= $detail->full_name ?? 'Not Spesicifed' ?></p>
+                            <p class="text-lg font-semibold text-gray-900"><?= $detail->full_name ?? 'Belum ada' ?></p>
                         </div>
 
                         <div class="info-card bg-gray-50 rounded-2xl p-4">
@@ -216,7 +214,7 @@
 
                         <div class="info-card bg-gray-50 rounded-2xl p-4">
                             <label class="block text-sm font-medium text-gray-500 mb-1">Phone Number</label>
-                            <p class="text-lg font-semibold text-gray-900"><?= htmlspecialchars($detail->phone_number ?? 'Not specified') ?></p>
+                            <p class="text-lg font-semibold text-gray-900"><?= htmlspecialchars($detail->phone_number ?? 'Belum ada') ?></p>
                         </div>
 
                         <!-- Tombol Logout -->
