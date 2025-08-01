@@ -271,7 +271,7 @@
                             <i class="bi bi-chevron-down toggle-dropdown"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/regular">Regular</a></li>
+                            <li><a href="/pelatihan/regular">Regular</a></li>
                             <li><a href="/mtu">Mobile Training Unit</a></li>
                         </ul>
                     </li>

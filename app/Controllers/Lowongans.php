@@ -88,7 +88,8 @@ class Lowongans extends BaseController
         $lowonganModel = new LowonganModel();
         $lowongan = $lowonganModel->find($id);
         if ($lowongan && isset($lowongan['gambar_poster'])) {
-            $path = '/uploads/foto_lowongan/' . $lowongan['gambar_poster'];
+            $gambar = '/uploads/foto_lowongan/' . $lowongan['gambar_poster'];
+            $path = FCPATH . $gambar;
             if (file_exists($path)) {
                 unlink($path);
             }
